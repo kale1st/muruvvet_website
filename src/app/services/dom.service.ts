@@ -1,11 +1,11 @@
-import { ElementRef, HostListener, Injectable, Renderer2 } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DomService {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor() { }
 
   select(el: string, all: boolean = false): any {
     el = el.trim();
@@ -24,37 +24,6 @@ export class DomService {
       } else {
         selectEl.addEventListener(type, listener);
       }
-    }
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  onscroll(): void {
-    this.navbarlinksActive();
-  }
-
-  navbarlinksActive(): void {
-    const position = window.scrollY + 200;
-    const navbarlinks = this.select('#navbar .scrollto', true);
-    navbarlinks.forEach((navbarlink: any) => {
-      if (!navbarlink.hash) return;
-      const section = this.select(navbarlink.hash);
-      if (!section) return;
-      if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
-        navbarlink.classList.add('active');
-      } else {
-        navbarlink.classList.remove('active');
-      }
-    });
-  }
-
-  scrollto(el: string): void {
-    const element = this.el.nativeElement.querySelector(el);
-    if (element) {
-      const elementPos = element.offsetTop;
-      this.renderer.setProperty(window, 'scrollTo', {
-        top: elementPos,
-        behavior: 'smooth',
-      });
     }
   }
 }
