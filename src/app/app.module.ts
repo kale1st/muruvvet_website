@@ -10,6 +10,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceComponent } from './service/service.component';
 import { ScrollDirective } from './scroll.directive';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ScrollDirective } from './scroll.directive';
     SkillsComponent,
     ResumeComponent,
     ServiceComponent,
-    ScrollDirective
+    ScrollDirective,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
