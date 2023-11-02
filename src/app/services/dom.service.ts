@@ -28,7 +28,7 @@ export class DomService {
   }
 
   @HostListener('window:scroll', ['$event'])
-  onscroll(event: Event): void {
+  onscroll(): void {
     this.navbarlinksActive();
   }
 

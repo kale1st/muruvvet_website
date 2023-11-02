@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DomService } from '../services/dom.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +6,13 @@ import { DomService } from '../services/dom.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private domservice: DomService) { }
+  isActive: string | null = null;
 
-  ngOnInit(): void {
-
+  toggleMobileNav(): void {
+    // Add logic to toggle mobile navigation
   }
 
-
+  setActive(section: string): void {
+    this.isActive = section;
+  }
 }
