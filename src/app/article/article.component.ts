@@ -1,6 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import Swiper from 'swiper';
-declare var $: any;
 
 @Component({
   selector: 'app-article',
@@ -8,27 +7,22 @@ declare var $: any;
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements AfterViewInit {
+  @ViewChild('testimonialsSlider') testimonialsSlider!: ElementRef;
 
   ngAfterViewInit() {
-    $(document).ready(function () {
-
-      new Swiper('.testimonials-slider', {
-        speed: 600,
-        loop: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
-        },
-        slidesPerView: 'auto',
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true
-        }
-      })
-
+    new Swiper(this.testimonialsSlider.nativeElement, {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
     });
-
   }
-
 }
