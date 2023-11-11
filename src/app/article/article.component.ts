@@ -58,7 +58,7 @@ export class ArticleComponent {
           "url": "https://medium.com/javarevisited/three-smart-collections-in-java-everyone-should-know-ad1c32720358"
         },
         {
-          "title": "Spring Security Without WebSecurityConfigurerAdapter",
+          "title": "Spring Security Without WebSecurity ConfigurerAdapter",
           "preview": `In the world of securing Java applications, Spring Security acts as a strong protector, making sure that applications are safe from threats and unauthorized use...          
           `,
           "imgUrl": "../../assets/img/articles/html-system-website-concept.jpg",

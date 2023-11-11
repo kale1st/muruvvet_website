@@ -14,17 +14,19 @@
         data-aos-delay="100"
         *ngFor="let article of data.articles"
       >
-        <div class="icon-box">
-          <div class="icon">
-            <img class="img" [src]="article.imgUrl" alt="" srcset="" />
+        <a [href]="article.url" style="color: black">
+          <div class="icon-box">
+            <div class="icon">
+              <img class="img" [src]="article.imgUrl" alt="aziz kale" />
+            </div>
+            <h4>
+              {{ article.title }}
+            </h4>
+            <p>
+              {{ article.preview }} <a [href]="article.url"><i>more</i></a>
+            </p>
           </div>
-          <h4>
-            <a [href]="article.url">{{ article.title }}</a>
-          </h4>
-          <p>
-            {{ article.preview }} <a [href]="article.url"><i>more</i></a>
-          </p>
-        </div>
+        </a>
       </div>
     </div>
   </div>
