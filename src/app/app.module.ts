@@ -10,6 +10,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ScrollDirective } from './scroll.directive';
 import { ArticleComponent } from './article/article.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ArticleComponent } from './article/article.component';
     SkillsComponent,
     ResumeComponent,
     ScrollDirective,
-    ArticleComponent
+    ArticleComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
