@@ -8,7 +8,6 @@ import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ResumeComponent } from './resume/resume.component';
-import { ServiceComponent } from './service/service.component';
 import { ScrollDirective } from './scroll.directive';
 import { ArticleComponent } from './article/article.component';
 
@@ -20,7 +19,6 @@ import { ArticleComponent } from './article/article.component';
     AboutComponent,
     SkillsComponent,
     ResumeComponent,
-    ServiceComponent,
     ScrollDirective,
     ArticleComponent
   ],

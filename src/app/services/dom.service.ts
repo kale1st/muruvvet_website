@@ -6,11 +6,7 @@ import { Injectable } from '@angular/core';
 export class DomService {
 
   constructor() { }
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
 
-  }
   select(el: string, all: boolean = false): any {
     el = el.trim();
     if (all) {
