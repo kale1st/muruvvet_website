@@ -6,29 +6,29 @@
     </div>
 
     <div class="row mt-1">
-      <div class="col-lg-4">
-        <div class="info">
-          <div class="address">
-            <i class="bi bi-geo-alt"></i>
-            <h4>Location:</h4>
-            <p>A108 Adam Street, New York, NY 535022</p>
-          </div>
+      <!-- <div class="col-lg-4"> -->
+      <div class="row info">
+        <div class="address col">
+          <i class="bi bi-geo-alt"></i>
+          <h4>Location:</h4>
+          <p>{{ data.location }}</p>
+        </div>
 
-          <div class="email">
-            <i class="bi bi-envelope"></i>
-            <h4>Email:</h4>
-            <p>info@example.com</p>
-          </div>
+        <div class="email col">
+          <i class="bi bi-envelope"></i>
+          <h4>Email:</h4>
+          <p>{{ data.email }}</p>
+        </div>
 
-          <div class="phone">
-            <i class="bi bi-phone"></i>
-            <h4>Call:</h4>
-            <p>+1 5589 55488 55s</p>
-          </div>
+        <div class="phone col">
+          <i class="bi bi-phone"></i>
+          <h4>Call:</h4>
+          <p>{{ data.phone }}</p>
         </div>
       </div>
+    </div>
 
-      <div class="col-lg-8 mt-5 mt-lg-0">
+    <!-- <div class="col-lg-8 mt-5 mt-lg-0">
         <form
           action="forms/contact.php"
           method="post"
@@ -87,8 +87,8 @@
             <button type="submit">Send Message</button>
           </div>
         </form>
-      </div>
-    </div>
+      </div> -->
   </div>
+  <!-- </div> -->
 </section>
 <!-- End Contact Section -->
