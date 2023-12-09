@@ -6,7 +6,38 @@ import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  data: any;
+
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+    this.data = {
+      "title": "Skills",
+      "description": "I have expertise in software development, particularly in JavaScript and Java programming languages, leveraging various libraries for enhanced functionality. My proficiency extends to the utilization of different technologies commonly employed in the software development lifecycle. I possess a good understanding of both NoSQL and relational databases, showcasing adeptness in effective database management. Furthermore, I am well-versed in Docker, utilizing it for seamless and efficient containerization in development projects.",
+      "skills": {
+        "frontend": [
+          "https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=yellow",
+          "https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white",
+          "https://img.shields.io/badge/rxjs-%23B7178C.svg?logo=reactivex&logoColor=white",
+          "https://img.shields.io/badge/angular-%23DD0031.svg?logo=angular&logoColor=white", "https://img.shields.io/badge/bootstrap-%23563D7C.svg?logo=bootstrap&logoColor=white"],
+        "backend": [
+          "https://img.shields.io/badge/node.js-6DA55F?logo=node.js&logoColor=white",
+          "https://img.shields.io/badge/express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB",
+          "https://img.shields.io/badge/-GraphQL-E10098?logo=graphql&logoColor=white",
+          "https://img.shields.io/badge/java-%23ED8B00.svg?logo=java&logoColor=white",
+          "https://img.shields.io/badge/spring-%236DB33F.svg?logo=spring&logoColor=white"],
+        "database": [
+          "https://img.shields.io/badge/firebase-%23039BE5.svg?logo=firebase",
+          "https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white",
+          "https://img.shields.io/badge/mysql-%2300f.svg?style=flat&logo=mysql&logoColor=white",
+          "https://img.shields.io/badge/-Swagger-%23Clojure?logo=swagger&logoColor=white"],
+        "devops": [
+          "https://img.shields.io/badge/Unity-%2320232a.svg?logo=unity&logoColor=white",
+          "https://img.shields.io/badge/docker-%230db7ed.svg?logo=docker&logoColor=white",
+          "https://img.shields.io/badge/jira-%230A0FFF.svg?logo=jira&logoColor=white",
+          "https://img.shields.io/badge/jira-%230A0FFF.svg?logo=jira&logoColor=white"]
+      }
+
+    }
+  }
 
   ngOnInit(): void {
     // Initial call to set progress bar widths on component load
@@ -29,3 +60,4 @@ export class SkillsComponent implements OnInit {
     });
   }
 }
+
