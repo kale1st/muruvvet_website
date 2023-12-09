@@ -1,14 +1,19 @@
-import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
   data: any;
+  progressBars: { width: string; color: string; lang: string }[] = [];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
+
+
+
+
     this.data = {
       "title": "Skills",
       "description": "I continuously enhance my coding skills gained during my university years, particularly in JavaScript and Java programming languages, by utilizing various libraries and CI/CD tools. I have proficiency in Docker and Jenkins, and I am experienced in both NoSQL and relational databases.",
@@ -55,6 +60,12 @@ export class SkillsComponent implements OnInit {
 
     // Listen for scroll events
     this.checkSkillsSectionOnScroll();
+
+    this.progressBars = [
+      { width: '80%', color: 'dogerblue', lang: 'German' },
+      { width: '70%', color: 'dogerblue', lang: 'English' },
+      { width: '100%', color: 'dogerblue', lang: 'Turkish' }
+    ];
   }
 
   private checkSkillsSection() {
