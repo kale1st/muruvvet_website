@@ -8,7 +8,7 @@ declare const Typed: any; // Declare Typed to avoid TypeScript error
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  typedItems: string[] = ['Full Stack Developer.'];
+  typedItems: string[] = ["Full Stack Developer", "Just imagine, I'll code it!"];
 
   ngOnInit(): void {
     // Hero type effect initialization
