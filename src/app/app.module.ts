@@ -11,6 +11,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { ScrollDirective } from './scroll.directive';
 import { ArticleComponent } from './article/article.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,11 @@ import { ContactComponent } from './contact/contact.component';
     ResumeComponent,
     ScrollDirective,
     ArticleComponent,
-    ContactComponent
+    ContactComponent,
+    ProjectsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,45 @@
+<div class="projects-container">
+  <h2 class="projects-title">My Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects">
+      <img
+        [src]="project.image"
+        alt="{{ project.name }}"
+        class="project-image"
+      />
+      <div class="project-content">
+        <h3 class="project-name">{{ project.name }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+        <a
+          [href]="project.link"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Project
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="selectedProject" (click)="closeModal($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close-button" (click)="closeModal($event)">&times;</span>
+    <h2>{{ selectedProject.name }}</h2>
+    <img
+      [src]="selectedProject.image"
+      alt="{{ selectedProject.name }}"
+      class="modal-image"
+    />
+    <p>{{ selectedProject.description }}</p>
+    <a
+      [href]="selectedProject.link"
+      class="modal-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      >View Project on GitHub</a
+    >
+  </div>
+</div>
