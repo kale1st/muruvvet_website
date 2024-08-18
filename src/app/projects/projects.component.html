@@ -11,17 +11,9 @@
         alt="{{ project.name }}"
         class="project-image"
       />
-      <div class="project-content">
+      <div class="project-content text-center">
         <h3 class="project-name">{{ project.name }}</h3>
-        <p class="project-description">{{ project.description }}</p>
-        <a
-          [href]="project.link"
-          class="project-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Project
-        </a>
+        <p class="project-description truncate">{{ project.description }}</p>
       </div>
     </div>
   </div>
@@ -41,34 +33,26 @@
     ></button>
   </div>
   <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input
-            id="dateOfBirth"
-            name="dateOfBirth"
-            class="form-control"
-            placeholder="yyyy-mm-dd"
-            ngbDatepicker
-            #dp="ngbDatepicker"
-          />
-          <button
-            type="button"
-            class="btn btn-outline-secondary bi bi-calendar"
-            (click)="dp.toggle()"
-          ></button>
-        </div>
+    <div class="project-card">
+      <img
+        [src]="selectedProject?.image"
+        alt="{{ selectedProject?.name }}"
+        class="project-image"
+      />
+      <div class="project-content text-center">
+        <p
+          class="project-description"
+          [innerHTML]="selectedProject?.description"
+        ></p>
+        <a
+          [href]="selectedProject?.link"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Project
+        </a>
       </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-outline-dark"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
+    </div>
   </div>
 </ng-template>
