@@ -1,58 +1,74 @@
-<div class="projects-container">
-  <h2 class="projects-title">My Projects</h2>
-  <div class="projects-grid">
-    <div
-      class="project-card"
-      *ngFor="let project of projects"
-      (click)="open(demoModal, project)"
-    >
-      <img
-        [src]="project.image"
-        alt="{{ project.name }}"
-        class="project-image"
-      />
-      <div class="project-content text-center">
-        <h3 class="project-name">{{ project.name }}</h3>
-        <p class="project-description truncate">{{ project.description }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="services">
+  <div class="projects-container">
+    <div class="section-title">
+      <h2>Projects</h2>
 
-<ng-template #demoModal let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">
-      {{ selectedProject?.name }}
-    </h4>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="modal"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <div class="project-card">
-      <img
-        [src]="selectedProject?.image"
-        alt="{{ selectedProject?.name }}"
-        class="project-image"
-      />
-      <div class="project-content text-center">
-        <p
-          class="project-description"
-          [innerHTML]="selectedProject?.description"
-        ></p>
-        <a
-          [href]="selectedProject?.link"
-          class="project-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Project
-        </a>
+      <h5>
+        As a dedicated Full Stack Developer, I take pride in crafting software
+        solutions that are both functional and elegant. This section showcases
+        some of my software projects, each reflecting my commitment to solving
+        complex challenges and delivering impactful solutions. Below, you'll
+        find examples of the innovative work I've developed, where technology
+        and creativity converge.
+      </h5>
+    </div>
+
+    <div class="projects-grid">
+      <div
+        class="project-card"
+        *ngFor="let project of projects"
+        (click)="open(demoModal, project)"
+      >
+        <img
+          [src]="project.image"
+          alt="{{ project.name }}"
+          class="project-image"
+        />
+        <div class="project-content text-center">
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-description truncate">
+            {{ project.description }}
+          </p>
+        </div>
       </div>
     </div>
+
+    <ng-template #demoModal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+          {{ selectedProject?.name }}
+        </h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="project-card">
+          <img
+            [src]="selectedProject?.image"
+            alt="{{ selectedProject?.name }}"
+            class="project-image"
+          />
+          <div class="project-content text-center">
+            <p
+              class="project-description"
+              [innerHTML]="selectedProject?.description"
+            ></p>
+            <a
+              [href]="selectedProject?.link"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </div>
-</ng-template>
+</section>
