@@ -1,7 +1,11 @@
 <div class="projects-container">
   <h2 class="projects-title">My Projects</h2>
   <div class="projects-grid">
-    <div class="project-card" *ngFor="let project of projects">
+    <div
+      class="project-card"
+      *ngFor="let project of projects"
+      (click)="open(demoModal, project)"
+    >
       <img
         [src]="project.image"
         alt="{{ project.name }}"
@@ -23,23 +27,48 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal" *ngIf="selectedProject" (click)="closeModal($event)">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <span class="close-button" (click)="closeModal($event)">&times;</span>
-    <h2>{{ selectedProject.name }}</h2>
-    <img
-      [src]="selectedProject.image"
-      alt="{{ selectedProject.name }}"
-      class="modal-image"
-    />
-    <p>{{ selectedProject.description }}</p>
-    <a
-      [href]="selectedProject.link"
-      class="modal-link"
-      target="_blank"
-      rel="noopener noreferrer"
-      >View Project on GitHub</a
-    >
+<ng-template #demoModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      {{ selectedProject?.name }}
+    </h4>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
   </div>
-</div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input
+            id="dateOfBirth"
+            name="dateOfBirth"
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            ngbDatepicker
+            #dp="ngbDatepicker"
+          />
+          <button
+            type="button"
+            class="btn btn-outline-secondary bi bi-calendar"
+            (click)="dp.toggle()"
+          ></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

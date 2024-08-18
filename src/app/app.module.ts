@@ -12,6 +12,7 @@ import { ScrollDirective } from './scroll.directive';
 import { ArticleComponent } from './article/article.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ProjectsComponent } from './projects/projects.component';
     ContactComponent,
     ProjectsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, NgbModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

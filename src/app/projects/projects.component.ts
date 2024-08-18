@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Project {
-  name: string;
-  description: string;
-  link: string;
-  image: string;
-}
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Project } from 'src/models/Project';
 
 @Component({
   selector: 'app-projects',
@@ -37,16 +32,12 @@ export class ProjectsComponent implements OnInit {
 
   selectedProject: Project | null = null;
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
 
-  ngOnInit(): void {}
-
-  openModal(project: Project): void {
+  public open(modal: any, project: Project): void {
+    this.modalService.open(modal);
     this.selectedProject = project;
   }
 
-  closeModal(event: Event): void {
-    event.stopPropagation();
-    this.selectedProject = null;
-  }
+  ngOnInit(): void {}
 }
