@@ -26,9 +26,10 @@
         />
         <div class="project-content text-center">
           <h3 class="project-name">{{ project.name }}</h3>
-          <p class="project-description truncate">
-            {{ project.description }}
-          </p>
+          <h5
+            class="project-description truncate"
+            [innerHTML]="project?.description"
+          ></h5>
         </div>
       </div>
     </div>
@@ -58,6 +59,36 @@
               class="project-description"
               [innerHTML]="selectedProject?.description"
             ></p>
+            <div *ngIf="selectedProject?.technologies">
+              <h5 class="mt-4">Technical Stack</h5>
+              <div class="text-start">
+                <p>
+                  <strong>Frontend:</strong>
+                  {{ selectedProject?.technologies?.frontend?.join(", ") }}
+                </p>
+                <p>
+                  <strong>Backend:</strong>
+                  {{ selectedProject?.technologies?.backend?.join(", ") }}
+                </p>
+                <p>
+                  <strong>Database:</strong>
+                  {{ selectedProject?.technologies?.database?.join(", ") }}
+                </p>
+                <p *ngIf="selectedProject?.technologies?.devOps?.length! > 0">
+                  <strong>DevOps:</strong>
+                  {{ selectedProject?.technologies?.devOps?.join(", ") }}
+                </p>
+
+                <p
+                  *ngIf="
+                    selectedProject?.technologies?.otherSkills?.length! > 0
+                  "
+                >
+                  <strong>Other Skills:</strong>
+                  {{ selectedProject?.technologies?.otherSkills?.join(", ") }}
+                </p>
+              </div>
+            </div>
             <a
               [href]="selectedProject?.link"
               class="project-link"

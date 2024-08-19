@@ -137,13 +137,15 @@
 }
 
 .truncate {
-  display: -webkit-box; /* Required for webkit-based browsers */
-  -webkit-box-orient: vertical; /* Specifies the box orientation as vertical */
-  overflow: hidden; /* Hides the overflowed content */
-  text-overflow: ellipsis; /* Shows ellipsis (...) */
-  -webkit-line-clamp: 3; /* Limits the content to 3 lines */
-  line-height: 1.5em; /* Adjust the line height as needed */
-  max-height: 4.5em; /* Should be line-height * number of lines (3 lines) */
+  display: -webkit-box; /* Ensure the container is a flexbox */
+  -webkit-line-clamp: 3; /* Number of lines to display before truncating */
+  -webkit-box-orient: vertical; /* Orientation of the text box */
+  overflow: hidden; /* Hide the overflow */
+  text-overflow: ellipsis; /* Add ellipsis (...) */
+  height: auto; /* Allow auto height */
+  max-height: 4.5em; /* Limit the height based on the line-height */
+  line-height: 1.5em; /* Adjust line-height to match the content */
+  width: 100%; /* Ensure it fits within its container */
 }
 .services .icon-box {
   text-align: center;
