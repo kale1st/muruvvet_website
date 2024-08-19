@@ -62,15 +62,15 @@
             <div *ngIf="selectedProject?.technologies">
               <h5 class="mt-4">Technical Stack</h5>
               <div class="text-start">
-                <p>
+                <p *ngIf="selectedProject?.technologies?.frontend?.length! > 0">
                   <strong>Frontend:</strong>
                   {{ selectedProject?.technologies?.frontend?.join(", ") }}
                 </p>
-                <p>
+                <p *ngIf="selectedProject?.technologies?.backend?.length! > 0">
                   <strong>Backend:</strong>
                   {{ selectedProject?.technologies?.backend?.join(", ") }}
                 </p>
-                <p>
+                <p *ngIf="selectedProject?.technologies?.database?.length! > 0">
                   <strong>Database:</strong>
                   {{ selectedProject?.technologies?.database?.join(", ") }}
                 </p>

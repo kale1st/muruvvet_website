@@ -47,19 +47,33 @@ export class ProjectsComponent implements OnInit {
       },
     },
     {
-      name: 'Project Three',
-      description: 'A brief description of Project Three.',
-      link: 'https://github.com/yourusername/project-three',
-      image: 'assets/images/project-three.png',
+      name: 'Freelance Web Development Project',
+      description: `I developed a custom website for a client as part of a freelance project, using plain JavaScript. I designed and implemented all site functionalities from the ground up, ensuring a seamless user experience and a fully responsive design. I completed the project on time, meeting all the client's specifications and successfully enhancing their online presence and functionality.`,
+      link: 'http://tonysdienstleistungen.de/#!',
+      image: 'assets/img/projects/tonny.png',
       technologies: {
-        frontend: ['Angular'],
-        backend: ['Java', 'Spring Boot', 'Hibernate', 'REST APIs'],
-        database: ['MSSQL'],
+        frontend: ['HTML', 'CSS', 'Plain JavaScript'],
+        backend: [],
+        database: [],
         devOps: [],
-        otherSkills: ['Team Leadership', 'Code Review', 'Team Management'],
+        otherSkills: [],
       },
     },
-    // Add more projects as needed
+    {
+      name: 'Freelance Car Dealership Website',
+      description: `I created a custom website for a car dealership client as a freelance project. I implemented web scraping techniques to extract vehicle information from Autoscout24 and integrated it seamlessly into the client's site using EJS (Embedded JavaScript Templates). I also designed a user-friendly interface and ensured real-time data synchronization, which significantly enhanced the dealership’s online presence and improved its overall functionality.
+
+      I chose to use a JSON file on the server for data storage, given the project’s minimal database needs. I also set up a cron job to automatically perform the data extraction at regular intervals, ensuring that the vehicle information remains up-to-date without requiring manual intervention.`,
+      link: '',
+      image: 'assets/img/projects/dundk.png',
+      technologies: {
+        frontend: ['HTML', 'CSS'],
+        backend: ['Embedded JavaScript(EJS)'],
+        database: [],
+        devOps: [],
+        otherSkills: ['Web Scraping', 'cronjob', 'JSON'],
+      },
+    },
   ];
 
   selectedProject: Project | null = null;
