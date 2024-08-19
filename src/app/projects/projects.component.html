@@ -54,11 +54,16 @@
             alt="{{ selectedProject?.name }}"
             class="project-image"
           />
+
           <div class="project-content text-center">
+            <div class="date text-end mb-1">
+              <i>{{ selectedProject?.date }}</i>
+            </div>
             <p
               class="project-description"
               [innerHTML]="selectedProject?.description"
             ></p>
+
             <div *ngIf="selectedProject?.technologies">
               <h5 class="mt-4">Technical Stack</h5>
               <div class="text-start">

@@ -20,6 +20,7 @@ export class ProjectsComponent implements OnInit {
       link: 'https://www.youtube.com/watch?v=sZFY0chh230',
       image: 'assets/img/projects/aero.png',
       githubLink: '',
+      date: 'March 2024 - Present',
       technologies: {
         frontend: ['Angular'],
         backend: [
@@ -39,6 +40,7 @@ export class ProjectsComponent implements OnInit {
       description: `I worked on enhancing the <a href="https://emm-it.de/career" target="_blank">EMM-IT</a>'s website by developing a new "Career" page, which provides information on job opportunities and encourages potential candidates to connect with the company. Using Java Spring Boot and RESTful APIs, I also developed the backend infrastructure from scratch for the site. Additionally, I implemented bilingual support, making the website fully accessible to both English and German-speaking users. These enhancements have significantly improved user experience and accessibility, helping EMM-IT reach a more diverse audience.`,
       link: 'https://emm-it.de',
       image: 'assets/img/projects/emmit.png',
+      date: 'November 2023 - March 2024',
       githubLink: '',
       technologies: {
         frontend: ['Angular'],
@@ -54,6 +56,7 @@ export class ProjectsComponent implements OnInit {
 
       link: 'http://tonysdienstleistungen.de/#!',
       image: 'assets/img/projects/tonny.png',
+      date: 'July 2022 - September 2022',
       githubLink:
         'https://github.com/cronycommunity/hausmeister-web-site-javascript',
       technologies: {
@@ -71,6 +74,7 @@ export class ProjectsComponent implements OnInit {
       I chose to use a JSON file on the server for data storage, given the project’s minimal database needs. I also set up a cron job to automatically perform the data extraction at regular intervals, ensuring that the vehicle information remains up-to-date without requiring manual intervention.`,
       link: 'https://d-und-k-automobile.de/#page-top',
       image: 'assets/img/projects/dundk.png',
+      date: 'June 2022 - August 2022',
       githubLink: '',
       technologies: {
         frontend: ['HTML', 'CSS'],

@@ -6,5 +6,6 @@ export interface Project {
   link: string;
   image: string;
   githubLink: string;
+  date: string;
   technologies: TechnologiesUsed;
 }
