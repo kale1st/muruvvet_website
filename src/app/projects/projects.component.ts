@@ -19,6 +19,7 @@ export class ProjectsComponent implements OnInit {
         While I oversee the development process, coordinate the team’s efforts, and ensure successful delivery, I also take pride in being directly involved in the technical implementation. My dual role as both a leader and a developer allows me to drive the project forward effectively, ensuring that the platform not only meets the client’s needs but also reflects high standards of software engineering.`,
       link: 'https://www.youtube.com/watch?v=sZFY0chh230',
       image: 'assets/img/projects/aero.png',
+      githubLink: '',
       technologies: {
         frontend: ['Angular'],
         backend: [
@@ -35,12 +36,13 @@ export class ProjectsComponent implements OnInit {
     },
     {
       name: 'EMM-IT Website Enhancements and Bilingual Support',
-      description: `I worked on enhancing the <a href="https://emm-it.de/career" target="_blank">EMM-IT</a> website by developing a new "Career" page, which provides information on job opportunities and encourages potential candidates to connect with the company. Using Java Spring Boot and RESTful APIs, I also developed the backend infrastructure from scratch for the site. Additionally, I implemented bilingual support, making the website fully accessible to both English and German-speaking users. These enhancements have significantly improved user experience and accessibility, helping EMM-IT reach a more diverse audience.`,
+      description: `I worked on enhancing the <a href="https://emm-it.de/career" target="_blank">EMM-IT</a>'s website by developing a new "Career" page, which provides information on job opportunities and encourages potential candidates to connect with the company. Using Java Spring Boot and RESTful APIs, I also developed the backend infrastructure from scratch for the site. Additionally, I implemented bilingual support, making the website fully accessible to both English and German-speaking users. These enhancements have significantly improved user experience and accessibility, helping EMM-IT reach a more diverse audience.`,
       link: 'https://emm-it.de',
       image: 'assets/img/projects/emmit.png',
+      githubLink: '',
       technologies: {
         frontend: ['Angular'],
-        backend: ['Java', 'Spring Boot', 'Hibernate', 'REST APIs'],
+        backend: ['Java', 'Spring Boot', 'Hibernate', 'REST API'],
         database: ['PostgreSQL'],
         devOps: ['Jenkins'],
         otherSkills: [],
@@ -48,9 +50,12 @@ export class ProjectsComponent implements OnInit {
     },
     {
       name: 'Freelance Web Development Project',
-      description: `I developed a custom website for a client as part of a freelance project, using plain JavaScript. I designed and implemented all site functionalities from the ground up, ensuring a seamless user experience and a fully responsive design. I completed the project on time, meeting all the client's specifications and successfully enhancing their online presence and functionality.`,
+      description: `I developed a custom website for a client as part of a freelance project while working within the <a href="https://github.com/cronycommunity"  target="_blank">cronycommunity</a> organization, using plain JavaScript. I designed and implemented all site functionalities from the ground up, ensuring a seamless user experience and a fully responsive design. I completed the project on time, meeting all the client's specifications and successfully enhancing their online presence and functionality.`,
+
       link: 'http://tonysdienstleistungen.de/#!',
       image: 'assets/img/projects/tonny.png',
+      githubLink:
+        'https://github.com/cronycommunity/hausmeister-web-site-javascript',
       technologies: {
         frontend: ['HTML', 'CSS', 'Plain JavaScript'],
         backend: [],
@@ -61,14 +66,21 @@ export class ProjectsComponent implements OnInit {
     },
     {
       name: 'Freelance Car Dealership Website',
-      description: `I created a custom website for a car dealership client as a freelance project. I implemented web scraping techniques to extract vehicle information from Autoscout24 and integrated it seamlessly into the client's site using EJS (Embedded JavaScript Templates). I also designed a user-friendly interface and ensured real-time data synchronization, which significantly enhanced the dealership’s online presence and improved its overall functionality.
+      description: `I created a custom website for a car dealership client as a freelance project while working within the <a href="https://github.com/cronycommunity"  target="_blank">cronycommunity</a> organization. I implemented web scraping techniques to extract vehicle information from Autoscout24 and integrated it seamlessly into the client's site using EJS (Embedded JavaScript Templates). I also designed a user-friendly interface and ensured real-time data synchronization, which significantly enhanced the dealership’s online presence and improved its overall functionality.
 
       I chose to use a JSON file on the server for data storage, given the project’s minimal database needs. I also set up a cron job to automatically perform the data extraction at regular intervals, ensuring that the vehicle information remains up-to-date without requiring manual intervention.`,
-      link: '',
+      link: 'https://d-und-k-automobile.de/#page-top',
       image: 'assets/img/projects/dundk.png',
+      githubLink: '',
       technologies: {
         frontend: ['HTML', 'CSS'],
-        backend: ['Embedded JavaScript(EJS)'],
+        backend: [
+          'Embedded JavaScript(EJS)',
+          'NodeJS',
+          'REST API',
+          'axios',
+          'cherio',
+        ],
         database: [],
         devOps: [],
         otherSkills: ['Web Scraping', 'cronjob', 'JSON'],

@@ -97,6 +97,15 @@
             >
               View Project
             </a>
+            <a
+              *ngIf="selectedProject?.githubLink !== ''"
+              [href]="selectedProject?.githubLink"
+              class="project-link mx-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Codes
+            </a>
           </div>
         </div>
       </div>
