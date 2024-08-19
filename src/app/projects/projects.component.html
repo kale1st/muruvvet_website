@@ -26,6 +26,9 @@
         />
         <div class="project-content text-center">
           <h3 class="project-name">{{ project.name }}</h3>
+          <div class="date text-end mb-1">
+            <i>{{ project.date }}</i>
+          </div>
           <h5
             class="project-description truncate"
             [innerHTML]="project?.description"
@@ -52,7 +55,7 @@
           <img
             [src]="selectedProject?.image"
             alt="{{ selectedProject?.name }}"
-            class="project-image"
+            class="modal-img"
           />
 
           <div class="project-content text-center">
