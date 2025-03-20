@@ -5,10 +5,10 @@ declare const Typed: any; // Declare Typed to avoid TypeScript error
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements OnInit {
-  typedItems: string[] = ["Full Stack Developer", "Just imagine, I'll code it!"];
+  typedItems: string[] = ['Die offene Tür.'];
 
   ngOnInit(): void {
     // Hero type effect initialization
@@ -19,7 +19,7 @@ export class HeroComponent implements OnInit {
         loop: true,
         typeSpeed: 100,
         backSpeed: 50,
-        backDelay: 2000
+        backDelay: 2000,
       });
     }
   }
