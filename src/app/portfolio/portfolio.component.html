@@ -1,0 +1,18 @@
+<div class="portfolio-container">
+  <!-- Portfolio Filters -->
+  <ul class="portfolio-filters">
+    <li
+      *ngFor="let filter of filters"
+      [ngClass]="{ 'filter-active': activeFilter === filter }"
+      (click)="applyFilter(filter)"
+    >
+      {{ filter }}
+    </li>
+  </ul>
+
+  <!-- Portfolio Items -->
+  <div class="portfolio-item" *ngFor="let item of filteredItems">
+    <img [src]="item.image" [alt]="item.title" />
+    <p>{{ item.title }}</p>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { ArticleComponent } from './article/article.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesComponent } from './services/services.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ServicesComponent } from './services/services.component';
     ArticleComponent,
     ContactComponent,
     ServicesComponent,
+    PortfolioComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule],
   providers: [],
