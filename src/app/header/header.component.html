@@ -1,26 +1,26 @@
-<div #body class="">
+<div #body>
   <i
     #header
     class="bi bi-list mobile-nav-toggle d-lg-none"
     (click)="toggleMobileNav()"
   ></i>
 
-  <!-- appScroll comes from directive (there is a special file for that) -->
   <header id="header" class="d-flex flex-column justify-content-center">
-    <nav id="navbar" class="navbar nav-menu" appScroll>
+    <nav id="navbar" class="navbar nav-menu" #navbar>
       <ul>
-        <li (click)="toggleMobileNav()">
-          <a href="#hero" class="nav-link scrollto active"
+        <li>
+          <a href="#hero" class="nav-link scrollto"
             ><i class="bx bx-home"></i> <span>Home</span></a
           >
         </li>
-        <li (click)="toggleMobileNav()">
-          <a href="#services" class="nav-link scrollto active">
-            <i class="bx bx-chat"></i> <span>Service</span>
-          </a>
+
+        <li>
+          <a href="#services" class="nav-link scrollto">
+            <i class="bx bx-code-alt"></i> <span>Services</span></a
+          >
         </li>
 
-        <li (click)="toggleMobileNav()">
+        <li>
           <a href="#contact" class="nav-link scrollto"
             ><i class="bx bx-envelope"></i> <span>Contact</span></a
           >
