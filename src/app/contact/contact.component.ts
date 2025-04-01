@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class ContactComponent {
   data: any = {
     location: 'Göttingen/Germany',
-    email: 'yusuf@elmal.com',
-    phone: 'ara beni',
+    email: 'muruvvet.goettingen@gmail.com',
+    phone: '‪+49 15560 008629',
   };
 }
