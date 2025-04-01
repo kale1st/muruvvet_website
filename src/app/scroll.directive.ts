@@ -1,12 +1,13 @@
 import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appScroll]'
+  selector: '[appScroll]',
+  standalone: true,
 })
 export class ScrollDirective implements OnInit {
   private navbarLinks!: NodeListOf<Element>;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef) {}
 
   ngOnInit() {
     this.navbarLinks = document.querySelectorAll('#navbar .scrollto');

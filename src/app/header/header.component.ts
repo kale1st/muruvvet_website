@@ -5,12 +5,14 @@ import {
   ViewChild,
   AfterViewInit,
 } from '@angular/core';
+import { ScrollDirective } from '../scroll.directive';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   standalone: true,
+  imports: [ScrollDirective],
 })
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('header') header!: ElementRef;
