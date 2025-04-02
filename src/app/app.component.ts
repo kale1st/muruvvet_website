@@ -3,6 +3,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 import { ServicesComponent } from './services/services.component';
+import { ArticleComponent } from './article/article.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { ServicesComponent } from './services/services.component';
   imports: [
     HeaderComponent,
     HeroComponent,
-    // ArticleComponent,
+    ArticleComponent,
     ContactComponent,
     ServicesComponent,
   ],
