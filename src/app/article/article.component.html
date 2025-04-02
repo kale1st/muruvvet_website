@@ -1,40 +1,44 @@
-<p-carousel
-  [value]="products"
-  [numVisible]="3"
-  [numScroll]="3"
-  [circular]="true"
-  [responsiveOptions]="responsiveOptions"
-  autoplayInterval="3000"
->
-  <ng-template pTemplate="item" let-product>
-    <div
-      class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 text-center"
-    >
-      <div class="mb-4">
-        <div class="relative mx-auto">
-          <img
-            src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-              product.image
-            }}"
-            [alt]="product.name"
-            class="w-full rounded-border"
-          />
-          <p-tag
-            [value]="product.inventoryStatus"
-            [severity]="getSeverity(product.inventoryStatus)"
-            class="absolute"
-            styleClass="dark:!bg-surface-900"
-            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
-          />
+<div id="gallery">
+  <p-carousel
+    [value]="products"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+    autoplayInterval="3000"
+  >
+    <ng-template pTemplate="item" let-product>
+      <div
+        class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 text-center"
+      >
+        <div class="mb-4">
+          <div class="relative mx-auto">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/product/{{
+                product.image
+              }}"
+              [alt]="product.name"
+              class="w-full rounded-border"
+            />
+            <p-tag
+              [value]="product.inventoryStatus"
+              [severity]="getSeverity(product.inventoryStatus)"
+              class="absolute"
+              styleClass="dark:!bg-surface-900"
+              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
+            />
+          </div>
+        </div>
+        <div class="mb-4 font-medium">{{ product.name }}</div>
+        <div class="flex justify-between items-center">
+          <div class="mt-0 font-semibold text-xl">
+            {{ "$" + product.price }}
+          </div>
+          <span>
+            <input class="btn btn-primary" type="button" value="show" />
+          </span>
         </div>
       </div>
-      <div class="mb-4 font-medium">{{ product.name }}</div>
-      <div class="flex justify-between items-center">
-        <div class="mt-0 font-semibold text-xl">{{ "$" + product.price }}</div>
-        <span>
-          <input class="btn btn-primary" type="button" value="show" />
-        </span>
-      </div>
-    </div>
-  </ng-template>
-</p-carousel>
+    </ng-template>
+  </p-carousel>
+</div>
