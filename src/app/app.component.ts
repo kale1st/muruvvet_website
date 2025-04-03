@@ -4,6 +4,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 import { ServicesComponent } from './services/services.component';
 import { ArticleComponent } from './article/article.component';
+import { PartnersComponent } from './partners/partners.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ArticleComponent } from './article/article.component';
     ArticleComponent,
     ContactComponent,
     ServicesComponent,
+    PartnersComponent,
   ],
 })
 export class AppComponent {}
