@@ -24,20 +24,20 @@ export class PartnersComponent {
   ngOnInit(): void {
     this.sliders = [
       {
-        name: 'Time to Help',
-        desc: 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.',
+        name: 'Time To Help',
+        desc: 'Eine humanitäre Hilfsorganisation, die weltweit bedürftige Menschen mit Bildungs-, Gesundheits- und Sozialprojekten unterstützt.',
         url: 'https://timetohelp.eu/',
         img: './../assets/img/time_to_help.webp',
       },
       {
-        name: 'Forum Dialog',
-        desc: 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.',
-        url: 'https://www.forumdialog.org/',
-        img: '../../assets/img/forumdialog-logo.png',
+        name: 'Forum Dialog Niedersachsen e.V.',
+        desc: 'Ein Verein, der interkulturellen und interreligiösen Dialog fördert und den gesellschaftlichen Zusammenhalt stärkt.',
+        url: 'https://forumdialogniedersachsen.org/',
+        img: '../../assets/img/Logo_forum_dialog_ndr.png',
       },
       {
-        name: 'House Of One',
-        desc: 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.',
+        name: 'Haus of One – Projekt in Berlin',
+        desc: 'Ein einzigartiges interreligiöses Bauprojekt, das eine Synagoge, eine Kirche und eine Moschee unter einem Dach vereint und den Austausch zwischen Religionen fördert.',
         url: 'https://www.forumdialog.org/projekt/house-of-one/',
         img: '../../assets/img/house-of-one.jpg',
       },
