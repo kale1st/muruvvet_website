@@ -1,8 +1,22 @@
-<div class="container-fluid">
+<div class="container-fluid" id="container">
   <app-header></app-header>
-  <app-hero></app-hero>
-  <app-services></app-services>
-  <app-partners></app-partners>
-  <app-article></app-article>
-  <app-contact></app-contact>
+  <div class="container">
+    <div class="mt-2">
+      <app-hero></app-hero>
+    </div>
+
+    <div class="p-1 my-4 bg-gray shadow-sm rounded">
+      <app-services></app-services>
+    </div>
+
+    <div class="p-1 my-4 bg-gray shadow-sm rounded">
+      <app-partners></app-partners>
+    </div>
+    <div class="p-1 my-4 bg-gray shadow-sm rounded">
+      <app-article></app-article>
+    </div>
+    <div class="p-1 my-4 bg-gray shadow-sm rounded">
+      <app-contact></app-contact>
+    </div>
+  </div>
 </div>
