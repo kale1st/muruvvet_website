@@ -107,3 +107,18 @@
   position: absolute;
   bottom: 10px;
 }
+
+.testimonial-item {
+  min-height: 150px;
+}
+
+@media (max-width: 576px) {
+  .testimonial-item {
+    min-height: 300px; /* mobilde biraz daha yüksek */
+  }
+}
+@media (max-width: 350px) {
+  .testimonial-item {
+    min-height: 500px; /* mobilde biraz daha yüksek */
+  }
+}
