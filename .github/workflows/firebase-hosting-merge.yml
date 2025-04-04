@@ -18,10 +18,13 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
+      - name: Install ci
         run: npm ci --legacy-peer-deps
 
       - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Install dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build Angular app
