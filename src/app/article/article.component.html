@@ -1,34 +1,44 @@
-<!-- ======= Services Section ======= -->
-<section id="articles" class="services">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>{{ data.sectionName }}</h2>
-      <div>
-        <h5 [innerHTML]="data.sectionDescription"></h5>
-      </div>
-    </div>
-    <div class="row">
+<div id="gallery">
+  <p-carousel
+    [value]="products"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+    autoplayInterval="3000"
+  >
+    <ng-template pTemplate="item" let-product>
       <div
-        class="col-lg-4 col-md-6 d-flex align-items-stretch my-1"
-        data-aos="zoom-in"
-        data-aos-delay="100"
-        *ngFor="let article of data.articles"
+        class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 text-center"
       >
-        <a [href]="article.url" style="color: black">
-          <div class="icon-box">
-            <div class="icon">
-              <img class="img" [src]="article.imgUrl" alt="aziz kale" />
-            </div>
-            <h4>
-              {{ article.title }}
-            </h4>
-            <p>
-              {{ article.preview }} <a [href]="article.url"><i>more</i></a>
-            </p>
+        <div class="mb-4">
+          <div class="relative mx-auto">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/product/{{
+                product.image
+              }}"
+              [alt]="product.name"
+              class="w-full rounded-border"
+            />
+            <p-tag
+              [value]="product.inventoryStatus"
+              [severity]="getSeverity(product.inventoryStatus)"
+              class="absolute"
+              styleClass="dark:!bg-surface-900"
+              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
+            />
           </div>
-        </a>
+        </div>
+        <div class="mb-4 font-medium">{{ product.name }}</div>
+        <div class="flex justify-between items-center">
+          <div class="mt-0 font-semibold text-xl">
+            {{ "$" + product.price }}
+          </div>
+          <span>
+            <input class="btn btn-primary" type="button" value="show" />
+          </span>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End Services Section -->
+    </ng-template>
+  </p-carousel>
+</div>

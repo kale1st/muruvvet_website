@@ -24,7 +24,9 @@
               "node_modules/swiper/swiper-bundle.min.css",
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/assets/vendor/bootstrap/css/bootstrap.min.css"
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
@@ -36,8 +38,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -62,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "myresume:build:production"
+              "buildTarget": "myresume:build:production"
             },
             "development": {
-              "browserTarget": "myresume:build:development"
+              "buildTarget": "myresume:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myresume:build"
+            "buildTarget": "myresume:build"
           }
         },
         "test": {
