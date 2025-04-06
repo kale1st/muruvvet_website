@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "muruvvetinminimalsitesi",
-    "hosting": "muruvvetinminimalsitesi"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "muruvvet-goettingen"
+  }
 }
