@@ -1,16 +1,24 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClientModule } from '@angular/common/http';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, ReactiveFormsModule],
 })
 export class ContactComponent {
-  constructor(private appService: AppService) {}
+  submitted: boolean = false;
+  constructor(private appService: AppService, private fb: FormBuilder) {}
 
   data: any = {
     location: 'Göttingen/Germany',
@@ -18,13 +26,31 @@ export class ContactComponent {
     phone: '‪+49 15560 008629',
   };
 
-  sendEmail() {
-    this.appService
-      .sendEmail('muruvvet.goettingen@gmail.com', 'test email', 'hello world')
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-      });
+  contactForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    subject: ['', Validators.required],
+    message: ['', Validators.required],
+  });
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.contactForm.invalid) {
+      return;
+    } else if (this.contactForm.valid) {
+      console.log(this.contactForm.value);
+      this.appService
+        .sendEmail(
+          this.contactForm.controls?.email?.value!,
+          this.contactForm?.controls?.subject?.value!,
+          this.contactForm?.controls?.message?.value!
+        )
+        .subscribe({
+          next: (data) => {
+            console.log(data);
+          },
+        });
+    }
   }
 }

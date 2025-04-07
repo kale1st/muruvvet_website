@@ -12,11 +12,11 @@ export class AppService {
   constructor(private http: HttpClient) {}
 
   sendEmail(
-    recipient: string,
+    sender: string,
     subject: string,
     textContent: string
   ): Observable<any> {
-    const emailData = { recipient, subject, textContent };
+    const emailData = { sender, subject, textContent };
     return this.http.post(this.apiUrl, emailData);
   }
 }
