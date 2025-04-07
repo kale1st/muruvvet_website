@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AppService {
-  // private apiUrl = 'https://muruvvet-website-api.vercel.app/send-email'; // Vercel URL
-  private apiUrl = 'http://localhost:3000/send-email'; // Vercel URL
+  private apiUrl = 'https://muruvvet-website-api.vercel.app/send-email'; // Vercel URL
+  //private apiUrl = 'http://localhost:3000/send-email'; // Vercel URL
 
   constructor(private http: HttpClient) {}
 

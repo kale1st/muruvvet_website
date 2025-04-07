@@ -18,6 +18,7 @@ import {
 })
 export class ContactComponent {
   submitted: boolean = false;
+  showSuccessMessage: boolean = false;
   constructor(private appService: AppService, private fb: FormBuilder) {}
 
   data: any = {
@@ -48,7 +49,14 @@ export class ContactComponent {
         )
         .subscribe({
           next: (data) => {
-            console.log(data);
+            this.contactForm.reset();
+            this.contactForm.markAsPristine();
+            this.contactForm.markAsUntouched();
+            this.submitted = false;
+            this.showSuccessMessage = true;
+            setTimeout(() => {
+              this.showSuccessMessage = false;
+            }, 5000);
           },
         });
     }
