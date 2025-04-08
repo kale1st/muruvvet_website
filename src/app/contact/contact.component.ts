@@ -19,6 +19,7 @@ import {
 export class ContactComponent {
   submitted: boolean = false;
   showSuccessMessage: boolean = false;
+  showSpinner: boolean = false;
   constructor(private appService: AppService, private fb: FormBuilder) {}
 
   data: any = {
@@ -36,11 +37,11 @@ export class ContactComponent {
 
   onSubmit() {
     this.submitted = true;
+    this.showSpinner = true;
 
     if (this.contactForm.invalid) {
       return;
     } else if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
       this.appService
         .sendEmail(
           this.contactForm.controls?.email?.value!,
@@ -49,6 +50,7 @@ export class ContactComponent {
         )
         .subscribe({
           next: (data) => {
+            this.showSpinner = false;
             this.contactForm.reset();
             this.contactForm.markAsPristine();
             this.contactForm.markAsUntouched();
