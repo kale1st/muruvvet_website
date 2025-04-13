@@ -5,6 +5,7 @@ import { HeroComponent } from './hero/hero.component';
 import { ServicesComponent } from './services/services.component';
 import { ArticleComponent } from './article/article.component';
 import { PartnersComponent } from './partners/partners.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { PartnersComponent } from './partners/partners.component';
     ContactComponent,
     ServicesComponent,
     PartnersComponent,
+    RouterModule,
   ],
 })
 export class AppComponent {}
