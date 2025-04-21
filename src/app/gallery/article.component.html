@@ -1,33 +1,52 @@
-<div id="gallery">
-  <p-carousel
-    [value]="products"
-    [numVisible]="2"
-    [numScroll]="2"
-    [circular]="true"
-    [responsiveOptions]="responsiveOptions"
-    autoplayInterval="3000"
-  >
-    <ng-template pTemplate="item" let-product>
-      <div
-        class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 text-center"
-      >
-        <div class="mb-4">
-          <div class="relative mx-auto">
-            <img
-              src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-                product.image
-              }}"
-              [alt]="product.name"
-              class="w-full rounded-border"
-            />
+<div id="gallery" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let group of groupedProducts; let i = index"
+      [class.active]="i === 0"
+    >
+      <div class="d-flex justify-content-center gap-4">
+        <div
+          *ngFor="let product of group"
+          class="card"
+          style="min-width: 18rem"
+        >
+          <img
+            [src]="product.image"
+            class="card-img-top"
+            alt="{{ product.name }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
           </div>
+          <a
+            class="btn btn-outline-primary mt-3 mb-2 mx-auto"
+            [routerLink]="['/detail', product.id]"
+          >
+            <i class="bi bi-arrow-right-circle me-1"></i> Detay
+          </a>
         </div>
-        <div class="mb-4 font-medium">{{ product.name }}</div>
-
-        <button class="btn btn-primary" [routerLink]="['/detail', product.id]">
-          Show
-        </button>
       </div>
-    </ng-template>
-  </p-carousel>
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#gallery"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#gallery"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>

@@ -14,7 +14,6 @@ export class DetailPageComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    window.scrollTo(0, 0);
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
 
     console.log(this.productId);
