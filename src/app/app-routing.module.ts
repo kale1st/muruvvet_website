@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: MainLayoutComponent,
   },
   {
-    path: 'detail',
-    component: DetailPageComponent, // layout kullanmadan render edilir
+    path: 'detail/:id',
+    component: DetailPageComponent,
   },
 ];

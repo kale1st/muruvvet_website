@@ -3,6 +3,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 export interface Product {
   id: string;
   name: string;
@@ -15,14 +16,10 @@ export interface Product {
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
   standalone: true,
-  imports: [CarouselModule, ButtonModule, TagModule, CommonModule],
+  imports: [CarouselModule, ButtonModule, TagModule, CommonModule, RouterLink],
 })
 export class ArticleComponent {
-  mymediumaccount: string;
-
-  constructor() {
-    this.mymediumaccount = 'azizkale';
-  }
+  constructor() {}
 
   products = [
     {
@@ -86,17 +83,4 @@ export class ArticleComponent {
       numScroll: 1,
     },
   ];
-
-  getSeverity(status: string): 'success' | 'warn' | 'danger' | 'info' | any {
-    switch (status.toLowerCase()) {
-      case 'in stock':
-        return 'success'; // Yeşil (Stokta varsa)
-      case 'low stock':
-        return 'warn'; // Sarı (Az stok varsa)
-      case 'out of stock':
-        return 'danger'; // Kırmızı (Stokta yoksa)
-      default:
-        return 'info'; // Mavi (Diğer durumlar için)
-    }
-  }
 }

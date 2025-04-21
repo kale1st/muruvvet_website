@@ -1,8 +1,8 @@
 <div id="gallery">
   <p-carousel
     [value]="products"
-    [numVisible]="3"
-    [numScroll]="3"
+    [numVisible]="2"
+    [numScroll]="2"
     [circular]="true"
     [responsiveOptions]="responsiveOptions"
     autoplayInterval="3000"
@@ -20,24 +20,13 @@
               [alt]="product.name"
               class="w-full rounded-border"
             />
-            <p-tag
-              [value]="product.inventoryStatus"
-              [severity]="getSeverity(product.inventoryStatus)"
-              class="absolute"
-              styleClass="dark:!bg-surface-900"
-              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
-            />
           </div>
         </div>
         <div class="mb-4 font-medium">{{ product.name }}</div>
-        <div class="flex justify-between items-center">
-          <div class="mt-0 font-semibold text-xl">
-            {{ "$" + product.price }}
-          </div>
-          <span>
-            <input class="btn btn-primary" type="button" value="show" />
-          </span>
-        </div>
+
+        <button class="btn btn-primary" [routerLink]="['/detail', product.id]">
+          Show
+        </button>
       </div>
     </ng-template>
   </p-carousel>

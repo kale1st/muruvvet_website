@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ArticleComponent } from 'src/app/article/article.component';
+import { ArticleComponent } from 'src/app/gallery/article.component';
 import { ContactComponent } from 'src/app/contact/contact.component';
 import { HeaderComponent } from 'src/app/header/header.component';
 import { HeroComponent } from 'src/app/hero/hero.component';
