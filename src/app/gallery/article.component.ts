@@ -19,68 +19,67 @@ export interface Product {
   imports: [CarouselModule, ButtonModule, TagModule, CommonModule, RouterLink],
 })
 export class ArticleComponent {
-  constructor() {}
-
   products = [
     {
-      id: '1000',
-      name: 'Bamboo Watch',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      inventoryStatus: 'INSTOCK', // "LOWSTOCK" veya "OUTOFSTOCK" olabilir
+      id: 1,
+      name: 'Elmalı Turta',
+      image: 'assets/img/detailpage/app-1.jpg',
+      description: 'Lezzetli elmalı turta - geleneksel tarif.',
     },
     {
-      id: '1001',
-      name: 'Black Watch',
-      image: 'black-watch.jpg',
-      price: 72,
-      inventoryStatus: 'LOWSTOCK',
+      id: 2,
+      name: 'Börek',
+      image: 'assets/img/detailpage/app-2.jpg',
+      description: 'Peynirli ve ıspanaklı börek.',
     },
     {
-      id: '1002',
-      name: 'Blue Band',
-      image: 'blue-band.jpg',
-      price: 79,
-      inventoryStatus: 'INSTOCK',
+      id: 3,
+      name: 'Baklava',
+      image: 'assets/img/detailpage/app-3.jpg',
+      description: 'Ev yapımı baklava, fıstıklı.',
     },
     {
-      id: '1003',
-      name: 'Blue T-Shirt',
-      image: 'blue-t-shirt.jpg',
-      price: 29,
-      inventoryStatus: 'INSTOCK',
+      id: 4,
+      name: 'Kısır',
+      image: 'assets/img/detailpage/app-1.jpg',
+      description: 'Nar ekşili ve taze sebzeli kısır.',
     },
     {
-      id: '1004',
-      name: 'Bracelet',
-      image: 'bracelet.jpg',
-      price: 15,
-      inventoryStatus: 'OUTOFSTOCK',
+      id: 5,
+      name: 'Dolma',
+      image: 'assets/img/detailpage/app-2.jpg',
+      description: 'Zeytinyağlı yaprak sarma.',
     },
     {
-      id: '1005',
-      name: 'Brown Purse',
-      image: 'brown-purse.jpg',
-      price: 120,
-      inventoryStatus: 'LOWSTOCK',
+      id: 6,
+      name: 'Kurabiye',
+      image: 'assets/img/detailpage/app-3.jpg',
+      description: 'Renkli süslemeli ev kurabiyesi.',
     },
   ];
 
-  responsiveOptions = [
-    {
-      breakpoint: '1024px',
-      numVisible: 3,
-      numScroll: 3,
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 2,
-      numScroll: 2,
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1,
-      numScroll: 1,
-    },
-  ];
+  groupedProducts: any[][] = [];
+
+  ngOnInit(): void {
+    this.groupProducts();
+    window.addEventListener('resize', () => {
+      this.groupedProducts = [];
+      this.groupProducts();
+    });
+  }
+
+  groupProducts() {
+    const screenWidth = window.innerWidth;
+    let groupSize = 3;
+
+    if (screenWidth < 576) {
+      groupSize = 1;
+    } else if (screenWidth < 1024) {
+      groupSize = 2;
+    }
+
+    for (let i = 0; i < this.products.length; i += groupSize) {
+      this.groupedProducts.push(this.products.slice(i, i + groupSize));
+    }
+  }
 }
