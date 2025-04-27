@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IPost } from 'src/app/models/IPost';
 
 @Component({
   selector: 'app-detail-page',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detail-page.component.html',
   styleUrl: './detail-page.component.css',
 })
@@ -32,13 +33,13 @@ export class DetailPageComponent {
             'ome representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-2.jpg',
           title: 'Second slide label',
           description:
             'Some representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-3.jpg',
           title: 'Third slide label',
           description:
             'Some representative placeholder content for the first slide.',
@@ -64,13 +65,13 @@ export class DetailPageComponent {
             'ome representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-2.jpg',
           title: 'Second slide label',
           description:
             'Some representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-3.jpg',
           title: 'Third slide label',
           description:
             'Some representative placeholder content for the first slide.',
@@ -96,13 +97,13 @@ export class DetailPageComponent {
             'ome representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-2.jpg',
           title: 'Second slide label',
           description:
             'Some representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-3.jpg',
           title: 'Third slide label',
           description:
             'Some representative placeholder content for the first slide.',
@@ -128,13 +129,13 @@ export class DetailPageComponent {
             'ome representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-2.jpg',
           title: 'Second slide label',
           description:
             'Some representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-3.jpg',
           title: 'Third slide label',
           description:
             'Some representative placeholder content for the first slide.',
@@ -160,13 +161,13 @@ export class DetailPageComponent {
             'ome representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-2.jpg',
           title: 'Second slide label',
           description:
             'Some representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-3.jpg',
           title: 'Third slide label',
           description:
             'Some representative placeholder content for the first slide.',
@@ -192,13 +193,13 @@ export class DetailPageComponent {
             'ome representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-2.jpg',
           title: 'Second slide label',
           description:
             'Some representative placeholder content for the first slide.',
         },
         {
-          url: 'assets/img/detailpage/app-1.jpg',
+          url: 'assets/img/detailpage/app-3.jpg',
           title: 'Third slide label',
           description:
             'Some representative placeholder content for the first slide.',
@@ -207,12 +208,14 @@ export class DetailPageComponent {
     },
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.post =
-      this.posts.find(
-        (p) => p.id === Number(this.route.snapshot.paramMap.get('id'))
-      ) || null;
+    const postId = Number(this.route.snapshot.paramMap.get('id'));
+    this.post = this.posts.find((p) => p.id === postId) || null;
+
+    if (!this.post) {
+      this.router.navigate(['/']);
+    }
   }
 }
