@@ -28,21 +28,12 @@ export class DetailPageComponent {
       images: [
         {
           url: 'assets/img/detailpage/app-1.jpg',
-          title: 'First slide label',
-          description:
-            'ome representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-2.jpg',
-          title: 'Second slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-3.jpg',
-          title: 'Third slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
       ],
     },
@@ -60,21 +51,12 @@ export class DetailPageComponent {
       images: [
         {
           url: 'assets/img/detailpage/app-1.jpg',
-          title: 'First slide label',
-          description:
-            'ome representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-2.jpg',
-          title: 'Second slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-3.jpg',
-          title: 'Third slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
       ],
     },
@@ -92,21 +74,12 @@ export class DetailPageComponent {
       images: [
         {
           url: 'assets/img/detailpage/app-1.jpg',
-          title: 'First slide label',
-          description:
-            'ome representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-2.jpg',
-          title: 'Second slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-3.jpg',
-          title: 'Third slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
       ],
     },
@@ -124,21 +97,12 @@ export class DetailPageComponent {
       images: [
         {
           url: 'assets/img/detailpage/app-1.jpg',
-          title: 'First slide label',
-          description:
-            'ome representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-2.jpg',
-          title: 'Second slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-3.jpg',
-          title: 'Third slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
       ],
     },
@@ -156,21 +120,12 @@ export class DetailPageComponent {
       images: [
         {
           url: 'assets/img/detailpage/app-1.jpg',
-          title: 'First slide label',
-          description:
-            'ome representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-2.jpg',
-          title: 'Second slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-3.jpg',
-          title: 'Third slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
       ],
     },
@@ -188,21 +143,12 @@ export class DetailPageComponent {
       images: [
         {
           url: 'assets/img/detailpage/app-1.jpg',
-          title: 'First slide label',
-          description:
-            'ome representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-2.jpg',
-          title: 'Second slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
         {
           url: 'assets/img/detailpage/app-3.jpg',
-          title: 'Third slide label',
-          description:
-            'Some representative placeholder content for the first slide.',
         },
       ],
     },
@@ -217,5 +163,9 @@ export class DetailPageComponent {
     if (!this.post) {
       this.router.navigate(['/']);
     }
+  }
+
+  trackByFn(index: number, item: any): number {
+    return index;
   }
 }

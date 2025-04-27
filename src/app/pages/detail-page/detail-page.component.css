@@ -2,14 +2,14 @@
 .carousel {
   width: 90vw;
   max-width: 85%;
-  height: 90vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
   margin: 5%;
 }
 
 .carousel-item {
-  height: 100vh;
+  height: 50vh;
 }
 
 .carousel-item img {
@@ -24,13 +24,11 @@
   background-size: 3rem 3rem;
 }
 
-/* Göstergeleri (dots) yukarıya al ve büyüt */
-.carousel-indicators {
-  /* bottom: 5px; */
-}
-
 .carousel-caption {
-  bottom: 70px;
+  background: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah arka plan */
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
 }
 
 .carousel-indicators [data-bs-target] {
