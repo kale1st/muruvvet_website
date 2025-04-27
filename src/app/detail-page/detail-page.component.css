@@ -1,10 +1,11 @@
 /* ===== Carousel (tam ekran ve responsive) ===== */
 .carousel {
   width: 90vw;
+  max-width: 85%;
   height: 90vh;
   overflow: hidden;
   position: relative;
-  margin: 2%;
+  margin: 5%;
 }
 
 .carousel-item {
@@ -25,7 +26,7 @@
 
 /* Göstergeleri (dots) yukarıya al ve büyüt */
 .carousel-indicators {
-  bottom: 5px;
+  /* bottom: 5px; */
 }
 
 .carousel-caption {
@@ -45,57 +46,12 @@
   background-color: #007bff;
 }
 
-/* ===== Yazı Alanı (Haber Okuma Stili) ===== */
-.portfolio-description {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  font-family: "Georgia", serif;
-  line-height: 1.8;
-  font-size: 1.05rem;
-  color: #333;
-  max-width: 800px;
-  margin: 2rem auto;
+.container {
+  text-align: -webkit-center;
 }
 
-/* Başlık */
-.portfolio-description h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 0.5rem;
-}
-
-/* Paragraflar */
-.portfolio-description p {
-  margin-bottom: 1rem;
-}
-
-/* Alıntı Kutusu */
-.testimonial-item {
-  border-left: 4px solid #007bff;
-  padding-left: 1rem;
-  margin-top: 2rem;
-  font-style: italic;
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* Alıntı ikonları */
-.testimonial-item i {
-  color: #007bff;
-}
-
-/* Alıntı yapan kişi */
-.testimonial-item h3 {
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-.testimonial-item h4 {
-  font-size: 0.9rem;
-  color: #666;
+@media (min-width: 1024px) {
+  .carousel-indicators {
+    display: none;
+  }
 }
