@@ -83,39 +83,20 @@
   <div class="row justify-content-center">
     <div class="col-lg-10">
       <div class="bg-white px-1 rounded shadow-sm m-3">
-        @for(post of posts; track post){ }
-        <h2 class="mb-3 text-center text-primary">Kermes Etkinliği</h2>
+        <h2 class="mb-3 text-center text-primary">{{ post?.title }}</h2>
         <p class="text-muted text-center mb-4">
-          <span> 15 Nisan 2025 </span> | <span> Dernek Bahçesi</span>
-        </p>
-
-        <p>
-          Derneğimizin geleneksel hale gelen kermes etkinliği bu yıl da yoğun
-          katılımla gerçekleşti. Katılımcılar el emeği ürünlerini sergiledi,
-          ziyaretçiler hem alışveriş yaptı hem de dernek faaliyetleri hakkında
-          bilgi aldı.
-        </p>
-
-        <p>
-          Etkinlik boyunca çocuklara özel oyun alanları, canlı müzik ve çeşitli
-          atölye çalışmaları ile dolu dolu bir gün yaşandı. Elde edilen gelir,
-          derneğimizin eğitim projelerinde kullanılmak üzere
-          değerlendirilecektir.
+          <span> {{ post?.date }} </span> | <span> {{ post?.place }}</span>
         </p>
 
         <blockquote
           class="blockquote my-4 border-start border-3 ps-3 text-secondary"
         >
-          “Bu tür etkinlikler toplumsal dayanışmayı artırıyor. Katkı sunan
-          herkese teşekkür ederiz.”
+          {{ post?.quote }}
         </blockquote>
 
-        <p>
-          Etkinlikte emeği geçen tüm gönüllülerimize, stand açan üyelerimize ve
-          katılan misafirlerimize teşekkür ederiz. Bir sonraki etkinlikte
-          görüşmek üzere!
-        </p>
-
+        @for(par of post?.mainText; track par){
+        <p>{{ par }}</p>
+        }
         <div class="text-end">
           <a href="/#gallery" class="btn btn-outline-primary mb-1"
             >← Diğer Etkinlikler</a

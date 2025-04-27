@@ -1,3 +1,5 @@
+import { IImage } from './IImage';
+
 export interface IPost {
   id: number;
   title: string;
@@ -5,5 +7,5 @@ export interface IPost {
   place: string;
   mainText: string[];
   quote: string;
-  images: string[];
+  images: IImage[];
 }

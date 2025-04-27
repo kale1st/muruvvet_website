@@ -25,9 +25,24 @@ export class DetailPageComponent {
       quote: `“Bu tür etkinlikler toplumsal dayanışmayı artırıyor. Katkı sunan
           herkese teşekkür ederiz.”`,
       images: [
-        'assets/img/detailpage/app-1.jpg',
-        'assets/img/detailpage/app-2.jpg',
-        'assets/img/detailpage/app-3.jpg',
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'First slide label',
+          description:
+            'ome representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Second slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Third slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
       ],
     },
     {
@@ -42,9 +57,24 @@ export class DetailPageComponent {
       ],
       quote: `"Bu tür etkinlikler toplumsal dayanışmayı artırıyor. Katkı sunan herkese teşekkür ederiz."`,
       images: [
-        'assets/img/detailpage/app-1.jpg',
-        'assets/img/detailpage/app-2.jpg',
-        'assets/img/detailpage/app-3.jpg',
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'First slide label',
+          description:
+            'ome representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Second slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Third slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
       ],
     },
     {
@@ -59,9 +89,24 @@ export class DetailPageComponent {
       ],
       quote: `"Toplumsal barışı ve kültürel anlayışı artırmak için daha çok diyalog yapmalıyız."`,
       images: [
-        'assets/img/detailpage/app-1.jpg',
-        'assets/img/detailpage/app-2.jpg',
-        'assets/img/detailpage/app-3.jpg',
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'First slide label',
+          description:
+            'ome representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Second slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Third slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
       ],
     },
     {
@@ -76,9 +121,24 @@ export class DetailPageComponent {
       ],
       quote: `"Sanat, insanın kendini en özgür şekilde ifade etmesidir."`,
       images: [
-        'assets/img/detailpage/app-1.jpg',
-        'assets/img/detailpage/app-2.jpg',
-        'assets/img/detailpage/app-3.jpg',
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'First slide label',
+          description:
+            'ome representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Second slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Third slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
       ],
     },
     {
@@ -93,9 +153,24 @@ export class DetailPageComponent {
       ],
       quote: `"Köy festivalleri, kültürümüzü yaşatmak ve gelecek nesillere aktarmak için önemlidir."`,
       images: [
-        'assets/img/detailpage/app-1.jpg',
-        'assets/img/detailpage/app-2.jpg',
-        'assets/img/detailpage/app-3.jpg',
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'First slide label',
+          description:
+            'ome representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Second slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Third slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
       ],
     },
     {
@@ -110,9 +185,24 @@ export class DetailPageComponent {
       ],
       quote: `"Doğayı korumak, yaşamı korumaktır."`,
       images: [
-        'assets/img/detailpage/app-1.jpg',
-        'assets/img/detailpage/app-2.jpg',
-        'assets/img/detailpage/app-3.jpg',
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'First slide label',
+          description:
+            'ome representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Second slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
+        {
+          url: 'assets/img/detailpage/app-1.jpg',
+          title: 'Third slide label',
+          description:
+            'Some representative placeholder content for the first slide.',
+        },
       ],
     },
   ];
