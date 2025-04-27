@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ArticleComponent } from 'src/app/gallery/article.component';
-import { ContactComponent } from 'src/app/contact/contact.component';
+import { ArticleComponent } from 'src/app/pages/gallery/article.component';
+import { ContactComponent } from 'src/app/pages/contact/contact.component';
 import { HeaderComponent } from 'src/app/header/header.component';
-import { HeroComponent } from 'src/app/hero/hero.component';
-import { PartnersComponent } from 'src/app/partners/partners.component';
+import { HeroComponent } from 'src/app/pages/hero/hero.component';
+import { PartnersComponent } from 'src/app/pages/partners/partners.component';
 import { ServicesComponent } from 'src/app/services/services.component';
 
 @Component({

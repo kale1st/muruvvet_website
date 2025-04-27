@@ -19,7 +19,13 @@ export interface Product {
   imports: [CarouselModule, ButtonModule, TagModule, CommonModule, RouterLink],
 })
 export class ArticleComponent {
-  products = [
+  posts = [
+    {
+      id: 0,
+      name: 'Kurabiye',
+      image: 'assets/img/detailpage/app-3.jpg',
+      description: 'Renkli süslemeli ev kurabiyesi.',
+    },
     {
       id: 1,
       name: 'Elmalı Turta',
@@ -50,12 +56,6 @@ export class ArticleComponent {
       image: 'assets/img/detailpage/app-2.jpg',
       description: 'Zeytinyağlı yaprak sarma.',
     },
-    {
-      id: 6,
-      name: 'Kurabiye',
-      image: 'assets/img/detailpage/app-3.jpg',
-      description: 'Renkli süslemeli ev kurabiyesi.',
-    },
   ];
 
   groupedProducts: any[][] = [];
@@ -78,8 +78,8 @@ export class ArticleComponent {
       groupSize = 2;
     }
 
-    for (let i = 0; i < this.products.length; i += groupSize) {
-      this.groupedProducts.push(this.products.slice(i, i + groupSize));
+    for (let i = 0; i < this.posts.length; i += groupSize) {
+      this.groupedProducts.push(this.posts.slice(i, i + groupSize));
     }
   }
 }
