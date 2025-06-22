@@ -1,7 +1,7 @@
 <div class="container">
   <div
     id="carouselExampleCaptions"
-    class="carousel slide rounded shadow-sm"
+    class="carousel carousel-dark slide rounded shadow-sm"
     data-bs-ride="carousel"
   >
     <div class="carousel-indicators">
@@ -28,6 +28,7 @@
     </div>
 
     <div class="carousel-inner">
+      <!-- *ngFor ile postları döngüye sokuyoruz -->
       <div class="carousel-inner">
         @for (image of post?.images; track image; let i = $index) {
         <div class="carousel-item" [ngClass]="{ active: i === 0 }">
