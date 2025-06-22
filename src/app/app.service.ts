@@ -32,6 +32,7 @@ export class AppService {
       eventPartners: [
         'Forum Dialog, House of One, St. Petri – St. Marien Gemeinde, Abraham-Geiger-Kolleg, Jüdische Gemeinde Berlin',
       ],
+      links: ['https://house-of-one.org'],
     },
     {
       id: 1,
@@ -48,6 +49,9 @@ export class AppService {
         {
           url: 'assets/img/detailpage/gemeinsam.png',
         },
+      ],
+      eventPartners: [
+        'St. Michael Kirche, Evangelisch-Lutherische Kirche, Reformierte Kirche, Mürüvvet – Die Offene Tür e.V.',
       ],
     },
     {
@@ -78,6 +82,7 @@ export class AppService {
           url: 'assets/img/detailpage/Mittagstisch1.jpg',
         },
       ],
+      eventPartners: ['Kirche Sankt Michael'],
     },
     {
       id: 3,
@@ -92,6 +97,9 @@ export class AppService {
         {
           url: 'assets/img/detailpage/corona_gebet.jpeg',
         },
+      ],
+      eventPartners: [
+        'St. Michael Kirche, Evangelisch-Lutherische Kirche, Reformierte Kirche, Mürüvvet e.V.',
       ],
     },
     {
@@ -142,6 +150,8 @@ export class AppService {
           url: 'assets/img/detailpage/fluechtling.png',
         },
       ],
+      eventPartners: ['AWO, Arbeiterwohlfahrt Bundesverband e.V.'],
+      links: ['https://www.awo.org'],
     },
     {
       id: 7,
@@ -161,6 +171,8 @@ export class AppService {
           url: 'assets/img/detailpage/kirmes2.png',
         },
       ],
+      eventPartners: ['Time to Help e.V.'],
+      links: ['https://timetohelp.eu/'],
     },
     {
       id: 8,
@@ -202,6 +214,11 @@ export class AppService {
         {
           url: 'assets/img/detailpage/pressefreiheit.png',
         },
+      ],
+      eventPartners: ['Gesellschaft für bedrohte Völker e.V.'],
+      links: [
+        'https://www.youtube.com/watch?v=iiXOb-EJHbs',
+        'https://www.gfbv.de/fileadmin/redaktion/Reporte_Memoranden/2020/Memo042020.pdf',
       ],
     },
   ];

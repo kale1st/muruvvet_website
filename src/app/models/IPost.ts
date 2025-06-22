@@ -9,5 +9,5 @@ export interface IPost {
   quote: string;
   images: IImage[];
   eventPartners?: string[];
-  moreInfo?: string;
+  links?: string[];
 }

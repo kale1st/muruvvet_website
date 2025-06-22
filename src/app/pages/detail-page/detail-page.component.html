@@ -57,9 +57,44 @@
           {{ post?.quote }}
         </blockquote>
 
-        @for(par of post?.mainText; track trackByFn){
+        @for(par of post?.mainText; track par){
         <p style="text-align: justify" class="p-1">{{ par }}</p>
         }
+
+        <div class="partners">
+          <ul
+            class="list-unstyled d-flex flex-wrap justify-content-start gap-3 align-items-center"
+          >
+            @for(partner of post?.eventPartners; let i = $index; track partner)
+            {
+            <li class="d-flex align-items-center">
+              <span *ngIf="i === 0" class="fw-bold me-1">Partners:</span>
+              <span>{{ partner }}</span>
+            </li>
+            }
+          </ul>
+        </div>
+        <div class="links">
+          <ul
+            class="list-unstyled d-flex flex-wrap justify-content-start gap-3"
+          >
+            @for(link of post?.links; track link; let i = $index) {
+            <li class="d-inline">
+              <span *ngIf="i === 0" class="fw-bold">Relevante Links:</span>
+              <a
+                [href]="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-decoration-none text-primary"
+                style="white-space: nowrap"
+              >
+                {{ link }} </a
+              ><span *ngIf="i < (post?.links?.length ?? 0) - 1">,</span>
+            </li>
+            }
+          </ul>
+        </div>
+
         <div class="text-end">
           <a href="/#gallery" class="btn btn-outline-primary mb-1"
             >← Weitere Veranstaltungen</a
