@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AppService } from 'src/app/app.service';
 export interface Product {
   id: string;
   name: string;
@@ -19,44 +20,45 @@ export interface Product {
   imports: [CarouselModule, ButtonModule, TagModule, CommonModule, RouterLink],
 })
 export class ArticleComponent {
-  posts = [
-    {
-      id: 0,
-      name: 'Kurabiye',
-      image: 'assets/img/detailpage/app-3.jpg',
-      description: 'Renkli süslemeli ev kurabiyesi.',
-    },
-    {
-      id: 1,
-      name: 'Elmalı Turta',
-      image: 'assets/img/detailpage/app-1.jpg',
-      description: 'Lezzetli elmalı turta - geleneksel tarif.',
-    },
-    {
-      id: 2,
-      name: 'Börek',
-      image: 'assets/img/detailpage/app-2.jpg',
-      description: 'Peynirli ve ıspanaklı börek.',
-    },
-    {
-      id: 3,
-      name: 'Baklava',
-      image: 'assets/img/detailpage/app-3.jpg',
-      description: 'Ev yapımı baklava, fıstıklı.',
-    },
-    {
-      id: 4,
-      name: 'Kısır',
-      image: 'assets/img/detailpage/app-1.jpg',
-      description: 'Nar ekşili ve taze sebzeli kısır.',
-    },
-    {
-      id: 5,
-      name: 'Dolma',
-      image: 'assets/img/detailpage/app-2.jpg',
-      description: 'Zeytinyağlı yaprak sarma.',
-    },
-  ];
+  constructor(public appService: AppService) {}
+  // posts = [
+  //   {
+  //     id: 0,
+  //     name: 'Kurabiye',
+  //     image: 'assets/img/detailpage/app-3.jpg',
+  //     description: 'Renkli süslemeli ev kurabiyesi.',
+  //   },
+  //   {
+  //     id: 1,
+  //     name: 'Elmalı Turta',
+  //     image: 'assets/img/detailpage/app-1.jpg',
+  //     description: 'Lezzetli elmalı turta - geleneksel tarif.',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Börek',
+  //     image: 'assets/img/detailpage/app-2.jpg',
+  //     description: 'Peynirli ve ıspanaklı börek.',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Baklava',
+  //     image: 'assets/img/detailpage/app-3.jpg',
+  //     description: 'Ev yapımı baklava, fıstıklı.',
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Kısır',
+  //     image: 'assets/img/detailpage/app-1.jpg',
+  //     description: 'Nar ekşili ve taze sebzeli kısır.',
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Dolma',
+  //     image: 'assets/img/detailpage/app-2.jpg',
+  //     description: 'Zeytinyağlı yaprak sarma.',
+  //   },
+  // ];
 
   groupedProducts: any[][] = [];
 
@@ -78,8 +80,10 @@ export class ArticleComponent {
       groupSize = 2;
     }
 
-    for (let i = 0; i < this.posts.length; i += groupSize) {
-      this.groupedProducts.push(this.posts.slice(i, i + groupSize));
+    for (let i = 0; i < this.appService.posts.length; i += groupSize) {
+      this.groupedProducts.push(this.appService.posts.slice(i, i + groupSize));
     }
+
+    console.log('Grouped Products:', this.groupedProducts);
   }
 }

@@ -28,7 +28,6 @@
     </div>
 
     <div class="carousel-inner">
-      <!-- *ngFor ile postları döngüye sokuyoruz -->
       <div class="carousel-inner">
         @for (image of post?.images; track image; let i = $index) {
         <div class="carousel-item" [ngClass]="{ active: i === 0 }">
