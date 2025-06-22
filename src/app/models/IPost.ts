@@ -8,4 +8,6 @@ export interface IPost {
   mainText: string[];
   quote: string;
   images: IImage[];
+  eventPartners?: string[];
+  moreInfo?: string;
 }

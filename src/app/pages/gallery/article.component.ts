@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
@@ -21,45 +21,6 @@ export interface Product {
 })
 export class ArticleComponent {
   constructor(public appService: AppService) {}
-  // posts = [
-  //   {
-  //     id: 0,
-  //     name: 'Kurabiye',
-  //     image: 'assets/img/detailpage/app-3.jpg',
-  //     description: 'Renkli süslemeli ev kurabiyesi.',
-  //   },
-  //   {
-  //     id: 1,
-  //     name: 'Elmalı Turta',
-  //     image: 'assets/img/detailpage/app-1.jpg',
-  //     description: 'Lezzetli elmalı turta - geleneksel tarif.',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Börek',
-  //     image: 'assets/img/detailpage/app-2.jpg',
-  //     description: 'Peynirli ve ıspanaklı börek.',
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Baklava',
-  //     image: 'assets/img/detailpage/app-3.jpg',
-  //     description: 'Ev yapımı baklava, fıstıklı.',
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'Kısır',
-  //     image: 'assets/img/detailpage/app-1.jpg',
-  //     description: 'Nar ekşili ve taze sebzeli kısır.',
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'Dolma',
-  //     image: 'assets/img/detailpage/app-2.jpg',
-  //     description: 'Zeytinyağlı yaprak sarma.',
-  //   },
-  // ];
-
   groupedProducts: any[][] = [];
 
   ngOnInit(): void {
@@ -83,7 +44,5 @@ export class ArticleComponent {
     for (let i = 0; i < this.appService.posts.length; i += groupSize) {
       this.groupedProducts.push(this.appService.posts.slice(i, i + groupSize));
     }
-
-    console.log('Grouped Products:', this.groupedProducts);
   }
 }

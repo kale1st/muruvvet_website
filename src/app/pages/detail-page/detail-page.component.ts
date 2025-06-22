@@ -23,7 +23,6 @@ export class DetailPageComponent {
   ngOnInit(): void {
     const postId = Number(this.route.snapshot.paramMap.get('id'));
     this.post = this.appService.posts.find((p) => p.id === postId) || null;
-    console.log('Post:', this.post);
 
     if (!this.post) {
       this.router.navigate(['/']);

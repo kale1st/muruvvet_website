@@ -29,6 +29,9 @@ export class AppService {
           url: 'assets/img/detailpage/houseofone.jpg',
         },
       ],
+      eventPartners: [
+        'Forum Dialog, House of One, St. Petri – St. Marien Gemeinde, Abraham-Geiger-Kolleg, Jüdische Gemeinde Berlin',
+      ],
     },
     {
       id: 1,
