@@ -41,8 +41,20 @@ export class ArticleComponent {
       groupSize = 2;
     }
 
-    for (let i = 0; i < this.appService.posts.length; i += groupSize) {
-      this.groupedProducts.push(this.appService.posts.slice(i, i + groupSize));
+    // Sort posts by id descending before grouping
+    const sortedPosts = [...this.appService.posts].sort((a: any, b: any) => {
+      const ai = Number(a.id);
+      const bi = Number(b.id);
+
+      if (!isNaN(ai) && !isNaN(bi)) {
+        return bi - ai; // numeric compare
+      }
+
+      return String(b.id).localeCompare(String(a.id)); // fallback string compare
+    });
+
+    for (let i = 0; i < sortedPosts.length; i += groupSize) {
+      this.groupedProducts.push(sortedPosts.slice(i, i + groupSize));
     }
   }
 }

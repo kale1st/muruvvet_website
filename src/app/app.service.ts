@@ -221,6 +221,65 @@ export class AppService {
         'https://www.gfbv.de/fileadmin/redaktion/Reporte_Memoranden/2020/Memo042020.pdf',
       ],
     },
+    {
+      id: 10,
+      title:
+        'Berlin entdecken – Eine Reise voller Begegnungen und Perspektiven',
+      date: '3. Oktober 2025',
+      place: 'Berlin',
+      mainText: [
+        'Eine Reise voller Begegnungen und Perspektiven! Vom 03. bis 05. Oktober 2025 nahmen acht Teilnehmerinnen an einer Bildungsreise nach Berlin teil, um die kulturelle Vielfalt der Hauptstadt aus nächster Nähe zu erleben. Ziel der Reise war es, interkulturellen Austausch zu fördern und Einblicke in das Zusammenleben unterschiedlicher Religionen und Lebensweisen zu gewinnen. Während des Programms besuchten die Teilnehmerinnen bedeutende historische Orte wie das Brandenburger Tor, die East Side Gallery und das Holocaust-Mahnmal und reflektierten dabei über Geschichte, Freiheit und Verantwortung.',
+        'Diese Bildungsreise fand im Rahmen eines interkulturellen Projekts statt. Wir danken der Dr. Buhmann Stiftung für interreligiöse Verständigung (Prinzenstr. 2, 30159 Hannover) für die großzügige Förderung und Unterstützung, die diese wertvollen Begegnungen und Lernerfahrungen ermöglicht hat.',
+        'Durch Besuche in Kirchen, Museen sowie Begegnungen mit zivilgesellschaftlichen Akteuren lernten sie das gesellschaftliche Miteinander aus erster Hand kennen. Der Besuch des House of One – einem Symbol für interreligiösen Dialog – sowie der Austausch mit der Kultur Akademie Berlin setzten besondere Schwerpunkte auf Toleranz, Respekt und friedliches Zusammenleben. Kreative Elemente wie die „Berlin in Farben“-Fotomission, gemeinsames Malen und ein Mini-Workshop stärkten Teamgeist und Ausdrucksfähigkeit.',
+        ' Die Reise bot nicht nur kulturelle Entdeckungen und wertvolle Lernmomente, sondern förderte auch soziale Kompetenzen, verantwortungsvolle Teilhabe und ein starkes Gemeinschaftsgefühl. Eine gelungene Verbindung von Bildung, Begegnung und Erleben!',
+      ],
+      quote: `"Bildungsreise nach Berlin: Vielfalt erleben, Toleranz stärken"`,
+      images: [
+        {
+          url: 'assets/img/detailpage/berlin_1.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_2.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_3.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_4.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_5.jpg',
+        },
+      ],
+      eventPartners: [],
+      links: [],
+    },
+    {
+      id: 11,
+      title: 'Mürüvvet e.V. bei der Interkulturellen Woche',
+      date: '26. September 2025',
+      place: 'Göttingen, Jona-Platz in Grone',
+      mainText: [
+        'Begegnung der Kulturen in Grone! Im Rahmen der bundesweit zum 50. Mal stattfindenden Interkulturellen Woche nahm Mürüvvet e.V. am „Interkulturellen Nachbarschaftsfest der Vielfalt“ teil, das am 26. September auf dem Jona-Platz in Grone großen Zuspruch fand. Mit unserem Beitrag setzten wir ein Zeichen für kulturellen Austausch und interreligiösen Dialog.',
+        'An unserem Stand präsentierten wir kulinarische Spezialitäten aus der türkischen Küche. Mit gegrillten Köfte, hausgemachten Süßspeisen und weiteren Angeboten konnten wir viele Besucher begeistern und einen Einblick in die türkische Gastfreundschaft geben. Durch den offenen Austausch entstanden wertvolle Gespräche und neue Kontakte – über kulturelle Grenzen hinweg.',
+        'Während des Festes bot sich die Möglichkeit, mit verschiedenen Vereinen, Initiativen und Institutionen aus der Region in Kontakt zu treten. Ziel der Veranstaltung war es, nachbarschaftliche Beziehungen zu stärken, Respekt gegenüber kultureller Vielfalt zu fördern und das gemeinsame Miteinander zu feiern. Ein buntes Rahmenprogramm mit Kinderaktionen, Bühnenauftritten, Informationsständen und internationalen Köstlichkeiten sorgte für eine lebendige Atmosphäre.',
+        'Als Mürüvvet e.V. sind wir überzeugt, dass das Zusammenkommen unterschiedlicher Kulturen Frieden, Respekt und gesellschaftlichen Zusammenhalt stärkt. Daher freuen wir uns, Teil dieser bedeutenden Veranstaltung im Rahmen der Interkulturellen Woche gewesen zu sein.',
+      ],
+      quote: `"Kulinarische Brücken und kulturelle Begegnungen in Grone"`,
+      images: [
+        {
+          url: 'assets/img/detailpage/grone_fest.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/grone_fest_1.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/grone_fest_2.jpg',
+        },
+      ],
+      eventPartners: [],
+      links: [],
+    },
   ];
 
   constructor(private http: HttpClient) {}
