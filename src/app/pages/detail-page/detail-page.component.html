@@ -1,0 +1,111 @@
+<div class="container">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      @for (image of post?.images; let i = $index;track image) {
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'Slide ' + (i + 1)"
+      ></button>
+      }
+    </div>
+    <div class="carousel-inner">
+      @for (image of post?.images; let i = $index;track image) {
+      <div class="carousel-item" [ngClass]="{ active: i === 0 }">
+        <img [src]="image.url" class="d-block w-100" alt="..." />
+      </div>
+      }
+    </div>
+    <button
+      style="background-color: rgb(226, 219, 219)"
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      style="background-color: rgb(226, 219, 219)"
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="bg-white px-1 rounded shadow-sm m-3">
+        <h2 class="mb-3 text-center text-primary">{{ post?.title }}</h2>
+        <p class="text-muted text-center mb-4">
+          <span> {{ post?.date }} </span> | <span> {{ post?.place }}</span>
+        </p>
+
+        <blockquote
+          class="blockquote my-4 border-start border-3 ps-3 text-secondary"
+        >
+          {{ post?.quote }}
+        </blockquote>
+
+        @for(par of post?.mainText; track par){
+        <p style="text-align: justify" class="p-1">{{ par }}</p>
+        }
+
+        <div class="partners">
+          <ul
+            class="list-unstyled d-flex flex-wrap justify-content-start gap-3 text-start"
+          >
+            @for(partner of post?.eventPartners; let i = $index; track partner)
+            {
+            <li class="">
+              <span *ngIf="i === 0" class="fw-bold">Partners: </span>
+              <span>{{ partner }}</span>
+              <span *ngIf="i < (post?.eventPartners?.length ?? 0) - 1">,</span>
+            </li>
+            }
+          </ul>
+        </div>
+
+        <div class="links">
+          <ul
+            class="list-unstyled d-flex flex-wrap justify-content-start gap-3"
+          >
+            @for(link of post?.links; track link; let i = $index) {
+            <li class="d-inline">
+              <span *ngIf="i === 0" class="fw-bold">Relevante Links:</span>
+              <a
+                [href]="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-decoration-none text-primary"
+                style="white-space: nowrap"
+              >
+                {{ link.length > 20 ? (link | slice : 0 : 20) + "…" : link }}
+              </a>
+              <span *ngIf="i < (post?.links?.length ?? 0) - 1">,</span>
+            </li>
+            }
+          </ul>
+        </div>
+
+        <div class="text-end">
+          <a href="/#gallery" class="btn btn-outline-primary mb-1"
+            >← Weitere Veranstaltungen</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

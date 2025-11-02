@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IPost } from './models/IPost';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,278 @@ import { Observable } from 'rxjs';
 export class AppService {
   private apiUrl = 'https://muruvvet-website-api.vercel.app/send-email'; // Vercel URL
   //private apiUrl = 'http://localhost:3000/send-email'; // Vercel URL
+
+  post: IPost | null = null;
+  posts: IPost[] = [
+    {
+      id: 0,
+      title:
+        'Interreligiöser Dialog und gemeinsamer Raum für den Frieden – Vorstellung des Projekts „House of One“',
+      date: '21 Juni 2021, 19.00 - 20.30 Uhr',
+      place: 'Online',
+      mainText: [
+        'In einer Zeit, in der unsere Welt mehr denn je Frieden braucht, haben sich jüdische, christliche und muslimische Gemeinschaften in Berlin zusammengeschlossen, um ein gemeinsames Gebets- und Begegnungshaus zu errichten. Das Projekt trägt den Namen „House of One“ und vereint Gotteshäuser und Bildungsräume der drei abrahamitischen Religionen unter einem Dach. Darüber hinaus soll es ein Ort des Austauschs und des Dialogs zwischen Menschen unterschiedlicher Glaubensrichtungen und Perspektiven sein.',
+        'Im Rahmen dieser Veranstaltung stellte Osman Örs vom Verein Forum Dialog das Projekt vor. Der Grundstein für das Gebäude wurde bereits in Berlin gelegt. Die Kosten des Projekts belaufen sich auf insgesamt 47 Millionen Euro. Davon übernimmt die Bundesregierung 20 Millionen Euro und das Land Berlin 10 Millionen Euro. Der verbleibende Betrag wird durch private Spenden finanziert.',
+        'Initiiert wurde das Projekt von den Berliner Kirchengemeinden St. Petri und St. Marien, unterstützt von der Jüdischen Gemeinde Berlin und dem Abraham-Geiger-Kolleg, das Rabbiner ausbildet. Forum Dialog beteiligt sich als Vertreter der muslimischen Gemeinschaft an dem Projekt. Dieses innovative Vorhaben soll in Zukunft als Vorbild für ähnliche interreligiöse Initiativen dienen.',
+      ],
+      quote: `“Frieden entsteht, wenn wir den Mut haben, Brücken zwischen unseren Unterschieden zu bauen.”`,
+      images: [
+        {
+          url: 'assets/img/detailpage/houseofone.jpg',
+        },
+      ],
+      eventPartners: [
+        'Forum Dialog, House of One, St. Petri – St. Marien Gemeinde, Abraham-Geiger-Kolleg, Jüdische Gemeinde Berlin',
+      ],
+      links: ['https://house-of-one.org'],
+    },
+    {
+      id: 1,
+      title: 'Gemeinsames Gebetsprogramm zum Tag der Menschenrechte',
+      date: '24. Dezember 2020, 12:00 Uhr',
+      place: 'Online',
+      mainText: [
+        'Menschenrechtsverletzungen und Unterdrückung sind weltweit traurige Realität. Um ein Zeichen gegen dieses Leiden zu setzen, fand am 24. Dezember 2020 ein gemeinsames Gebetsprogramm mit Vertreter*innen verschiedener religiöser Gemeinschaften statt.',
+        'An dem Online-Programm beteiligten sich die Katholische Kirche (St. Michael), die Evangelisch-Lutherische Kirche, die Reformierte Kirche sowie die muslimisch geprägte Organisation Mürüvvet – Die Offene Tür e.V.',
+        'Zwischen den Gebetsabschnitten wurde ein künstlerischer Beitrag von einem Vertreter der katholischen Kirche präsentiert. Diese interreligiöse Zusammenkunft setzte ein starkes Zeichen für Mitgefühl, Menschenwürde und die gemeinsame Verantwortung aller Glaubensrichtungen für Gerechtigkeit und Frieden in der Welt.',
+      ],
+      quote: `"Gemeinsam beten heißt, gemeinsam Verantwortung für Gerechtigkeit und Frieden in der Welt zu tragen."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/gemeinsam.png',
+        },
+      ],
+      eventPartners: [
+        'St. Michael Kirche, Evangelisch-Lutherische Kirche, Reformierte Kirche, Mürüvvet – Die Offene Tür e.V.',
+      ],
+    },
+    {
+      id: 2,
+      title: 'Mittagstisch – Mittagessen für Obdachlose am Weltflüchtlingstag',
+      date: '20. Juni 2021',
+      place: 'Kirche Sankt Michael',
+      mainText: [
+        'Anlässlich des Weltflüchtlingstags am 20. Juni 2021 organisierte Mürüvvet – Die Offene Tür e.V. in Zusammenarbeit mit der Kirche Sankt Michael einen Mittagstisch für Obdachlose in Göttingen.',
+        'In den Räumlichkeiten der Kirche wurde ein warmes Mittagessen angeboten, bei dem verschiedene Spezialitäten der türkischen Küche serviert wurden. Die Gerichte wurden mit großer Sorgfalt und mit Beiträgen unserer Mitglieder zubereitet.',
+        'Diese soziale Aktion diente nicht nur der Versorgung Bedürftiger, sondern setzte zugleich ein Zeichen der Solidarität und Menschlichkeit am Weltflüchtlingstag. Die Veranstaltung förderte den Austausch, das gegenseitige Verständnis und die Sichtbarkeit gesellschaftlicher Verantwortung.',
+      ],
+      quote: `"Solidarität beginnt mit einer warmen Mahlzeit und einem offenen Herzen"`,
+      images: [
+        {
+          url: 'assets/img/detailpage/Mittagstisch5.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/Mittagstisch2.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/Mittagstisch3.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/Mittagstisch4.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/Mittagstisch1.jpg',
+        },
+      ],
+      eventPartners: ['Kirche Sankt Michael'],
+    },
+    {
+      id: 3,
+      title: 'Gemeinsames Gebet in Zeiten von Corona',
+      date: '24. April 2021',
+      place: 'Online',
+      mainText: [
+        'In der herausfordernden Zeit der Corona-Pandemie haben sich vier verschiedene religiöse Gemeinschaften zu einem gemeinsamen Gebet online versammelt. Teilnehmer waren die Katholische Kirche, die Evangelische Kirche, die Reformierte Kirche sowie der muslimisch vertretene Verein Mürüvvet-Die Offene Tür e.V. Ziel war es, für ein baldiges Ende der Corona-Epidemie zu beten und die Rückkehr zu einem normalen Leben zu erbitten. Zwischen den Gebetsabschnitten präsentierte ein Künstler der katholischen Kirche sein Werk und trug so zur spirituellen Atmosphäre der Veranstaltung bei.',
+      ],
+      quote: `"Gemeinsam beten, gemeinsam hoffen – für Gesundheit, Zuversicht und ein baldiges Wiedersehen."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/corona_gebet.jpeg',
+        },
+      ],
+      eventPartners: [
+        'St. Michael Kirche, Evangelisch-Lutherische Kirche, Reformierte Kirche, Mürüvvet e.V.',
+      ],
+    },
+    {
+      id: 4,
+      title:
+        'Besuch von Herrn Dirk Toepffer, Vorsitzender der CDU-Fraktion im Niedersächsischen Landtag',
+      date: '18. Mai 2021',
+      place: 'Niedersächsischer Landtag, Hannover',
+      mainText: [
+        'Im Rahmen des Besuchs von Herrn Dirk Toepffer, Vorsitzender der CDU-Fraktion im Niedersächsischen Landtag, fand ein intensives Gespräch über die Erfahrungen von Ömer Faruk Gergerlioglu statt, der zu Unrecht aus dem Parlament entlassen und in der Türkei inhaftiert wurde. Thematisiert wurden auch die Menschen, die vor allem nach dem Putschversuch am 15. Juli 2016 ungerechtfertigt ihren Arbeitsplatz und ihren Beruf verloren haben und ohne rechtliche Grundlage inhaftiert wurden.',
+        'Diskutiert wurden die erlebten Rechtswidrigkeiten sowie die Schwierigkeiten von Personen, die aus ihrem Beruf entlassen wurden und auch in der Privatwirtschaft keine Arbeit finden durften. Ein weiteres zentrales Thema war die Tatsache, dass über 700 Kinder bei ihren Müttern im Gefängnis verbleiben mussten, was als ein weiterer Aspekt der erlebten Illegalität betrachtet wird.',
+      ],
+      quote: `"Gerechtigkeit bedeutet, die Stimme für jene zu erheben, denen sie genommen wurde."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/besuchvonherrdirktoepffer.png',
+        },
+      ],
+    },
+    {
+      id: 5,
+      title: 'Frauenpezifische Aspekte der Verfolgung am Beispiel der Türkei',
+      date: '10. März 2021',
+      place: 'Online',
+      mainText: [
+        'Am 10. März 2021 veranstaltete unser Verein anlässlich des Internationalen Frauentages ein Online-Seminar. Im Programm hielt Hanife Tosun einen Vortrag zum Thema „Frauenrechtsbeschwerden in der Türkei“. Anschließend berichtete ein Vereinsmitglied, Sümeyra Durmaz, von den Erfahrungen, die sie und ihre Familie nach dem sogenannten Putschversuch am 15. Juli 2016 machten. Sie informierte außerdem über ihre Ankunft in Deutschland und ihr jetziges Leben.',
+      ],
+      quote: `"Die Stimmen der Frauen erzählen von Mut, Hoffnung und dem unermüdlichen Einsatz für Gerechtigkeit."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/Frauentag.png',
+        },
+      ],
+    },
+    {
+      id: 6,
+      title: 'Flüchtlinge haben das Wort',
+      date: '18. Juni 2021, 19.00 Uhr',
+      place: 'Online',
+      mainText: [
+        'Anlässlich des Weltflüchtlingstags am 20. Juni organisierte Mürüvvet e.V. eine Reihe von Veranstaltungen, darunter das Online-Seminar „Flüchtlinge haben das Wort“. Im Mittelpunkt standen die Erfolgsgeschichten von zwei geflüchteten Frauen und zwei geflüchteten Männern, die erst kürzlich in Deutschland angekommen sind. Sie berichteten von den Gründen ihrer Flucht, ihren ersten Erfahrungen in Deutschland sowie den Herausforderungen, denen sie begegneten. Trotz aller Schwierigkeiten erzählten sie von ihrem Weg des Neuanfangs, ihren Bemühungen beim Spracherwerb, der Suche nach akademischen Stipendien oder beruflichen Möglichkeiten.',
+        'Herr Masarwa vom AWO Arbeiterwohlfahrt Bundesverband e.V. stellte zusätzlich Programme zur Integration vor und betonte in seinem Vortrag die Bedeutung von Flüchtlingen für die Gesellschaft. Auch prominente Gäste wie der Bundestagsabgeordnete Thomas Ehbrecht, MdL, und Frau Hammer, Leiterin des Integrationsbüros, nahmen aktiv am Programm teil, trugen mit ihren Beiträgen zur Diskussion bei und gaben wertvolle Empfehlungen.',
+        'Die Teilnehmenden hoben in ihren Rückmeldungen hervor, wie beeindruckt sie von den gezeigten Lebenswegen waren. Sie betonten, dass die erzielten Erfolge ein Ergebnis von großem Einsatz und Selbstaufopferung seien und lobten zugleich das Engagement des deutschen Staates für die Integration. Viele empfanden das Programm als inspirierend und sahen darin eine wichtige Motivation für andere Geflüchtete.',
+      ],
+      quote: `"Integration ist keine Einbahnstraße – sie ist eine Erfolgsgeschichte, die wir gemeinsam weiterschreiben können."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/fluechtling.png',
+        },
+      ],
+      eventPartners: ['AWO, Arbeiterwohlfahrt Bundesverband e.V.'],
+      links: ['https://www.awo.org'],
+    },
+    {
+      id: 7,
+      title: 'Online-Kermes für Flüchtlinge in Griechenland',
+      date: '11. April 2021',
+      place: 'Mürüvvet e.V. Mitglieder, Time to Help e.V.',
+      mainText: [
+        'Am Sonntag, den 11. April 2021, veranstaltete Mürüvvet e.V. mit seinen Mitgliedern einen Online-Kermes, bei dem verschiedene Köstlichkeiten der türkischen Küche vorgestellt wurden – alle von den Mitgliedern liebevoll zu Hause zubereitet. Die Bestellungen der Teilnehmenden wurden direkt an ihre Haustür geliefert. Der gesamte Erlös der Aktion wurde mit Unterstützung von Time to Help e.V. an Flüchtlinge in Griechenland weitergeleitet.',
+        'Im Anschluss an den Kermes fand ein Online-Nachprogramm statt. Dabei wurden die Teilnehmenden über Ziel und Wirkung der Spendenaktion informiert. Außerdem wurden Ölgemälde von Kübra Icyer, einem Mitglied des Vereins, präsentiert. Frau Icyer erzählte nicht nur über die Gemälde selbst, sondern auch über deren Entstehungsgeschichten. Nach dem kulturellen Teil konnten die Teilnehmenden die einzigartigen Aromen der türkischen Küche genießen.',
+      ],
+      quote: `"Gemeinsam teilen, gemeinsam helfen – jede noch so kleine Geste kann Hoffnung schenken und Brücken bauen, wo Not herrscht."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/kirmes1.png',
+        },
+        {
+          url: 'assets/img/detailpage/kirmes2.png',
+        },
+      ],
+      eventPartners: ['Time to Help e.V.'],
+      links: ['https://timetohelp.eu/'],
+    },
+    {
+      id: 8,
+      title:
+        'Ramadan-Iftar – Begegnung in familiärer Atmosphäre trotz Pandemie',
+      date: 'Ramadan-Monat 2021',
+      place: 'Zu Hause bei Mitgliedern des Vereins',
+      mainText: [
+        'Trotz der Einschränkungen durch die Pandemie organisierte Mürüvvet e.V. auch im Ramadan 2021 Iftar-Abende mit Gästen aus verschiedenen kulturellen und religiösen Hintergründen. Anders als in den Vorjahren konnten die Teilnehmenden dieses Mal nicht gemeinsam an einem großen Tisch sitzen. Stattdessen wurde das Iftar unter Einhaltung der geltenden Hygienevorschriften in den Privathaushalten der Vereinsmitglieder durchgeführt – jeweils mit einem Gast pro Haushalt.',
+        'Während des Abends erhielten die Gäste Informationen über den islamischen Fastenmonat, über die spirituelle Bedeutung des Fastens und weitere Ramadan-Rituale. Gemeinsam wurde das Fasten gebrochen und anschließend gebetet. In den Gesprächen konnten auch Fragen zum islamischen Glauben gestellt und persönliche Erfahrungen ausgetauscht werden.',
+        'Besonders eindrücklich war die Reaktion vieler Gäste: Einige erklärten, dass es das erste Mal sei, dass ein Muslim sie zu Hause besucht habe. Andere sagten: „Ich habe heute auch gefastet, um Sie besser zu verstehen.“ Mehrere Teilnehmende hoben hervor, dass die Vielfalt der Kulturen ein großer Reichtum für Deutschland sei und solche Begegnungen den gesellschaftlichen Zusammenhalt stärken.',
+      ],
+      quote: `"Auch auf Abstand kann Nähe entstehen – ein geteiltes Iftar-Mahl verbindet Herzen, selbst in herausfordernden Zeiten."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/ramadan1.jpeg',
+        },
+        {
+          url: 'assets/img/detailpage/ramadan2.jpeg',
+        },
+        {
+          url: 'assets/img/detailpage/ramadan3.jpeg',
+        },
+      ],
+    },
+    {
+      id: 9,
+      title: 'Pressefreiheit in der Türkei – Eine kritische Bestandsaufnahme',
+      date: '7. Mai 2021, 19:00',
+      place: 'Online',
+      mainText: [
+        'Anlässlich des Weltjournalistentags am 3. Mai organisierte Mürüvvet e.V. gemeinsam mit der Gesellschaft für bedrohte Völker e.V. ein Online-Programm zur aktuellen Situation der Pressefreiheit in der Türkei. Im Mittelpunkt standen insbesondere die Entwicklungen nach dem sogenannten Putschversuch vom 15. Juli 2016, der zu massiven Repressionen gegen Journalist*innen führte.',
+        'Nach dem 15. Juli 2016 gerieten zahlreiche Medienschaffende in der Türkei unter enormen Druck. Hunderte Journalist*innen wurden verhaftet, Tausende verloren ihre berufliche Existenzgrundlage. Die Gesellschaft für bedrohte Völker e.V. verfasste hierzu einen ausführlichen Bericht, der an verschiedene Institutionen und Organisationen in Deutschland weitergeleitet wurde.',
+        'Im Rahmen der Veranstaltung stellte Dr. Kemal Sido die zentralen Inhalte dieses Berichts vor und beleuchtete die Herausforderungen, denen Journalist*innen in der Türkei gegenüberstehen. Einen besonders bewegenden Beitrag lieferte Yüksel Durgut, der über 25 Jahre in der Türkei als Journalist tätig war, nach dem Putschversuch verhaftet wurde und lange Zeit im Gefängnis verbrachte. Als Zeitzeuge berichtete er über seine Erlebnisse und die Repressionen, denen er ausgesetzt war.',
+        'Im Anschluss fand eine offene Fragerunde mit den Gästen statt, in der die Diskussion vertieft wurde. Die Veranstaltung stieß auf großes Interesse und sensibilisierte die Teilnehmenden für die prekäre Lage der Pressefreiheit in autokratischen Systemen.',
+      ],
+      quote: `"Freiheit der Presse ist das Fundament einer offenen Gesellschaft – erst im Dialog erkennen wir ihren wahren Wert."`,
+      images: [
+        {
+          url: 'assets/img/detailpage/pressefreiheit.png',
+        },
+      ],
+      eventPartners: ['Gesellschaft für bedrohte Völker e.V.'],
+      links: [
+        'https://www.youtube.com/watch?v=iiXOb-EJHbs',
+        'https://www.gfbv.de/fileadmin/redaktion/Reporte_Memoranden/2020/Memo042020.pdf',
+      ],
+    },
+    {
+      id: 10,
+      title:
+        'Berlin entdecken – Eine Reise voller Begegnungen und Perspektiven',
+      date: '3. Oktober 2025',
+      place: 'Berlin',
+      mainText: [
+        'Eine Reise voller Begegnungen und Perspektiven! Vom 03. bis 05. Oktober 2025 nahmen acht Teilnehmerinnen an einer Bildungsreise nach Berlin teil, um die kulturelle Vielfalt der Hauptstadt aus nächster Nähe zu erleben. Ziel der Reise war es, interkulturellen Austausch zu fördern und Einblicke in das Zusammenleben unterschiedlicher Religionen und Lebensweisen zu gewinnen. Während des Programms besuchten die Teilnehmerinnen bedeutende historische Orte wie das Brandenburger Tor, die East Side Gallery und das Holocaust-Mahnmal und reflektierten dabei über Geschichte, Freiheit und Verantwortung.',
+        'Diese Bildungsreise fand im Rahmen eines interkulturellen Projekts statt. Wir danken der Dr. Buhmann Stiftung für interreligiöse Verständigung (Prinzenstr. 2, 30159 Hannover) für die großzügige Förderung und Unterstützung, die diese wertvollen Begegnungen und Lernerfahrungen ermöglicht hat.',
+        'Durch Besuche in Kirchen, Museen sowie Begegnungen mit zivilgesellschaftlichen Akteuren lernten sie das gesellschaftliche Miteinander aus erster Hand kennen. Der Besuch des House of One – einem Symbol für interreligiösen Dialog – sowie der Austausch mit der Kultur Akademie Berlin setzten besondere Schwerpunkte auf Toleranz, Respekt und friedliches Zusammenleben. Kreative Elemente wie die „Berlin in Farben“-Fotomission, gemeinsames Malen und ein Mini-Workshop stärkten Teamgeist und Ausdrucksfähigkeit.',
+        ' Die Reise bot nicht nur kulturelle Entdeckungen und wertvolle Lernmomente, sondern förderte auch soziale Kompetenzen, verantwortungsvolle Teilhabe und ein starkes Gemeinschaftsgefühl. Eine gelungene Verbindung von Bildung, Begegnung und Erleben!',
+      ],
+      quote: `"Bildungsreise nach Berlin: Vielfalt erleben, Toleranz stärken"`,
+      images: [
+        {
+          url: 'assets/img/detailpage/berlin_1.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_2.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_3.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_4.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/berlin_5.jpg',
+        },
+      ],
+      eventPartners: [],
+      links: [],
+    },
+    {
+      id: 11,
+      title: 'Mürüvvet e.V. bei der Interkulturellen Woche',
+      date: '26. September 2025',
+      place: 'Göttingen, Jona-Platz in Grone',
+      mainText: [
+        'Begegnung der Kulturen in Grone! Im Rahmen der bundesweit zum 50. Mal stattfindenden Interkulturellen Woche nahm Mürüvvet e.V. am „Interkulturellen Nachbarschaftsfest der Vielfalt“ teil, das am 26. September auf dem Jona-Platz in Grone großen Zuspruch fand. Mit unserem Beitrag setzten wir ein Zeichen für kulturellen Austausch und interreligiösen Dialog.',
+        'An unserem Stand präsentierten wir kulinarische Spezialitäten aus der türkischen Küche. Mit gegrillten Köfte, hausgemachten Süßspeisen und weiteren Angeboten konnten wir viele Besucher begeistern und einen Einblick in die türkische Gastfreundschaft geben. Durch den offenen Austausch entstanden wertvolle Gespräche und neue Kontakte – über kulturelle Grenzen hinweg.',
+        'Während des Festes bot sich die Möglichkeit, mit verschiedenen Vereinen, Initiativen und Institutionen aus der Region in Kontakt zu treten. Ziel der Veranstaltung war es, nachbarschaftliche Beziehungen zu stärken, Respekt gegenüber kultureller Vielfalt zu fördern und das gemeinsame Miteinander zu feiern. Ein buntes Rahmenprogramm mit Kinderaktionen, Bühnenauftritten, Informationsständen und internationalen Köstlichkeiten sorgte für eine lebendige Atmosphäre.',
+        'Als Mürüvvet e.V. sind wir überzeugt, dass das Zusammenkommen unterschiedlicher Kulturen Frieden, Respekt und gesellschaftlichen Zusammenhalt stärkt. Daher freuen wir uns, Teil dieser bedeutenden Veranstaltung im Rahmen der Interkulturellen Woche gewesen zu sein.',
+      ],
+      quote: `"Kulinarische Brücken und kulturelle Begegnungen in Grone"`,
+      images: [
+        {
+          url: 'assets/img/detailpage/grone_fest.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/grone_fest_1.jpg',
+        },
+        {
+          url: 'assets/img/detailpage/grone_fest_2.jpg',
+        },
+      ],
+      eventPartners: [],
+      links: [],
+    },
+  ];
 
   constructor(private http: HttpClient) {}
 

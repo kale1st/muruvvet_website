@@ -1,0 +1,12 @@
+.card {
+  width: 18rem; /* Kart genişliğini sabitler */
+  min-width: 18rem;
+  max-width: 18rem;
+}
+
+.card-img-top {
+  width: 100%; /* Kartın genişliğini tamamen kaplar */
+  height: 200px; /* Sabit yükseklik */
+  object-fit: contain; /* Resmin tamamı sığar, oran bozulmaz, boşluk kalabilir */
+  background: #f8f9fa; /* Boşluklar için arka plan */
+}

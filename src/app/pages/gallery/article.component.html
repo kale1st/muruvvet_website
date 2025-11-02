@@ -1,0 +1,53 @@
+<div id="gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let group of groupedProducts; let i = index"
+      [class.active]="i === 0"
+    >
+      <div class="d-flex justify-content-center gap-4">
+        <div
+          *ngFor="let product of group"
+          class="card"
+          style="min-width: 18rem"
+          [routerLink]="['/detail', product.id]"
+        >
+          <img
+            [src]="product.images[0].url"
+            class="card-img-top"
+            alt="{{ product.title }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+          </div>
+          <a
+            class="btn btn-outline-primary mt-3 mb-2 mx-auto"
+            [routerLink]="['/detail', product.id]"
+          >
+            <i class="bi bi-arrow-right-circle me-1"></i> Zum Beitrag
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#gallery"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#gallery"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
